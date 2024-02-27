@@ -30,10 +30,14 @@ const App = () => {
           <Button
             mode="contained"
             onPress={() => console.log("Login/Register")}
+            style={styles.btn}
           >
             Login | Register
           </Button>
-          <Text onPress={() => console.log(" continue as guest")}>
+          <Text
+            onPress={() => console.log(" continue as guest")}
+            style={styles.guestText}
+          >
             Continue as Guest
           </Text>
         </View>
@@ -73,10 +77,23 @@ const styles = StyleSheet.create({
     fontSize: 18,
     marginTop: 10,
     color: "black", // Adjust according to your theme
+    fontWeight: "bold",
   },
   buttonContainer: {
     width: "80%",
     marginBottom: 50, // Adjust the margin as needed
+  },
+  btn: {
+    width: "100%",
+    borderRadius: 8,
+    backgroundColor: "#000",
+    padding: 8,
+    fontWeight: "bold",
+  },
+  guestText: {
+    marginTop: 20,
+    textAlign: "center",
+    fontWeight: "bold",
   },
 });
 
