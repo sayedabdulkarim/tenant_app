@@ -33,9 +33,9 @@ const App = () => {
           >
             Login | Register
           </Button>
-          <Button mode="text" onPress={() => console.log("Continue as Guest")}>
+          <Text onPress={() => console.log(" continue as guest")}>
             Continue as Guest
-          </Button>
+          </Text>
         </View>
       </View>
     </SafeAreaView>
