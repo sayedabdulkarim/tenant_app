@@ -7,7 +7,11 @@ const App = () => {
 
   return (
     <SafeAreaView style={styles.safeArea}>
-      <StatusBar barStyle="light-content" />
+      <StatusBar
+        // backgroundColor="rgba(212, 207, 210, 0.1)"
+        backgroundColor="rgba(255, 215, 0, 7)"
+        barStyle="dark-content"
+      />
       <View style={styles.container}>
         {/* Logo and Title */}
         <View style={styles.logoContainer}>
@@ -41,7 +45,8 @@ const App = () => {
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
-    backgroundColor: "#FFD700", // Set your primary color here
+    // backgroundColor: "#FFD700", // Set your primary color here
+    backgroundColor: "rgba(255, 215, 0, 1)", // This should be the same yellow as your StatusBar, but fully opaque
   },
   container: {
     flex: 1,
