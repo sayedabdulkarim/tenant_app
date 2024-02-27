@@ -14,7 +14,6 @@ const App = () => {
           {/* Replace with your own image */}
           <Avatar.Image
             source={{
-              // uri: "https://e7.pngegg.com/pngimages/48/511/png-clipart-computer-icons-home-home-angle-text-thumbnail.png",
               uri: "https://cdn-icons-png.flaticon.com/512/25/25694.png",
             }}
             style={styles.logo}
