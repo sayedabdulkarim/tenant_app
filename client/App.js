@@ -7,7 +7,7 @@ const App = () => {
 
   return (
     <SafeAreaView style={styles.safeArea}>
-      <StatusBar barStyle="light-content" backgroundColor={colors.primary} />
+      <StatusBar barStyle="light-content" />
       <View style={styles.container}>
         {/* Logo and Title */}
         <View style={styles.logoContainer}>
@@ -54,14 +54,16 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
+    width: "100%",
+    height: "100%",
+    resizeMode: "cover",
   },
   logo: {
-    width: 150, // Set your logo width
-    height: 150, // Set your logo height
-    resizeMode: "cover",
+    // width: 150, // Set your logo width
+    // height: 150, // Set your logo height
     backgroundColor: "transparent",
-    borderWidth: 2,
-    borderColor: "red",
+    // borderWidth: 2,
+    // borderColor: "red",
   },
   title: {
     fontSize: 18,
