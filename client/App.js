@@ -22,7 +22,9 @@ const App = () => {
             }}
             style={styles.logo}
           />
-          <Text style={styles.title}>Your Rental MADE EASY</Text>
+          <Text style={styles.title}>
+            <Text style={styles.lightTitle}>Your Rental</Text> MADE EASY
+          </Text>
         </View>
 
         {/* Buttons */}
@@ -74,10 +76,14 @@ const styles = StyleSheet.create({
     // borderColor: "red",
   },
   title: {
-    fontSize: 18,
+    fontSize: 20,
     marginTop: 10,
-    color: "black", // Adjust according to your theme
+    color: "red", // Adjust according to your theme
     fontWeight: "bold",
+  },
+  lightTitle: {
+    fontSize: 16,
+    fontWeight: "500",
   },
   buttonContainer: {
     width: "80%",
