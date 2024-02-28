@@ -13,6 +13,8 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 const Stack = createNativeStackNavigator();
 
 //screens
+//unauth
+import AuthLanding from "./unauth/AuthLanding";
 import Login from "../screens/unauth/Login";
 
 const Index = () => {
@@ -24,12 +26,13 @@ const Index = () => {
       />
       <NavigationContainer>
         <Stack.Navigator
-          initialRouteName={"login"}
+          initialRouteName={"auth"}
           screenOptions={({}) => ({
             headerShown: false,
           })}
         >
           <Stack.Group>
+            <Stack.Screen name="auth" component={AuthLanding} />
             <Stack.Screen name="login" component={Login} />
           </Stack.Group>
         </Stack.Navigator>
