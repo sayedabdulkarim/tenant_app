@@ -13,7 +13,7 @@ const Header = ({ back, emtpyCart = false }) => {
         <TouchableOpacity
           style={{
             position: "absolute",
-            left: -10,
+            left: 10,
             top: 0,
             zIndex: 10,
           }}
@@ -23,6 +23,7 @@ const Header = ({ back, emtpyCart = false }) => {
             style={{ backgroundColor: "transparent" }}
             icon={"arrow-left"}
             color="black"
+            size={40}
           />
         </TouchableOpacity>
       )}
