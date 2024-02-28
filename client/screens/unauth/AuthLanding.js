@@ -2,44 +2,45 @@ import * as React from "react";
 import { SafeAreaView, View, StyleSheet, StatusBar } from "react-native";
 import { Button, Text, useTheme, Avatar } from "react-native-paper";
 
-const AuthLanding = () => {
+const AuthLanding = ({ navigation }) => {
   const { colors } = useTheme();
 
   return (
-    <SafeAreaView style={styles.safeArea}>
-      <View style={styles.container}>
-        {/* Logo and Title */}
-        <View style={styles.logoContainer}>
-          {/* Replace with your own image */}
-          <Avatar.Image
-            source={{
-              uri: "https://cdn-icons-png.flaticon.com/512/25/25694.png",
-            }}
-            style={styles.logo}
-          />
-          <Text style={styles.title}>
-            <Text style={styles.lightTitle}>Your Rental</Text> MADE EASY
-          </Text>
-        </View>
-
-        {/* Buttons */}
-        <View style={styles.buttonContainer}>
-          <Button
-            mode="contained"
-            onPress={() => console.log("Login/Register")}
-            style={styles.btn}
-          >
-            Login | Register
-          </Button>
-          <Text
-            onPress={() => console.log(" continue as guest")}
-            style={styles.guestText}
-          >
-            Continue as Guest
-          </Text>
-        </View>
+    // <SafeAreaView style={styles.safeArea}>
+    <View style={styles.container}>
+      {/* Logo and Title */}
+      <View style={styles.logoContainer}>
+        {/* Replace with your own image */}
+        <Avatar.Image
+          source={{
+            uri: "https://cdn-icons-png.flaticon.com/512/25/25694.png",
+          }}
+          style={styles.logo}
+        />
+        <Text style={styles.title}>
+          <Text style={styles.lightTitle}>Your Rental</Text> MADE EASY
+        </Text>
       </View>
-    </SafeAreaView>
+
+      {/* Buttons */}
+      <View style={styles.buttonContainer}>
+        <Button
+          mode="contained"
+          // onPress={() => console.log("Login/Register")}
+          onPress={() => navigation.navigate("login")}
+          style={styles.btn}
+        >
+          Login | Register
+        </Button>
+        <Text
+          onPress={() => console.log(" continue as guest")}
+          style={styles.guestText}
+        >
+          Continue as Guest
+        </Text>
+      </View>
+    </View>
+    // </SafeAreaView>
   );
 };
 

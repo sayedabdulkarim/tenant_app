@@ -1,14 +1,91 @@
+import * as React from "react";
 import { StyleSheet, Text, View } from "react-native";
-import React from "react";
+import { TextInput, Button, Menu, Provider } from "react-native-paper";
 
 const Login = () => {
+  const [phone, setPhone] = React.useState("");
+  const [email, setEmail] = React.useState("");
+  const [password, setPassword] = React.useState("");
+  const [secureTextEntry, setSecureTextEntry] = React.useState(true);
+  const [countryCode, setCountryCode] = React.useState("+1"); // Default country code
+  const [menuVisible, setMenuVisible] = React.useState(false);
+
+  const submitForm = () => {
+    console.log(`Phone: ${countryCode} ${phone}`);
+    console.log(`Email: ${email}`);
+    console.log(`Password: ${password}`);
+  };
+
   return (
-    <View>
+    <View style={styles.container}>
       <Text>Login</Text>
+      <Menu
+        visible={menuVisible}
+        onDismiss={() => setMenuVisible(false)}
+        anchor={
+          <Button onPress={() => setMenuVisible(true)}>{countryCode}</Button>
+        }
+      >
+        {/* List your country codes here */}
+        <Menu.Item
+          onPress={() => {
+            setCountryCode("+1");
+            setMenuVisible(false);
+          }}
+          title="+1"
+        />
+        <Menu.Item
+          onPress={() => {
+            setCountryCode("+91");
+            setMenuVisible(false);
+          }}
+          title="+91"
+        />
+        {/* Add more Menu.Items as needed for other country codes */}
+      </Menu>
+      <TextInput
+        label="Phone"
+        value={phone}
+        onChangeText={(text) => setPhone(text)}
+        style={styles.input}
+        left={<TextInput.Affix text={countryCode} />}
+      />
+      <TextInput
+        label="Email"
+        value={email}
+        onChangeText={(text) => setEmail(text)}
+        style={styles.input}
+        keyboardType="email-address"
+      />
+      <TextInput
+        label="Password"
+        value={password}
+        onChangeText={(text) => setPassword(text)}
+        secureTextEntry={secureTextEntry}
+        style={styles.input}
+        right={
+          <TextInput.Icon
+            name={secureTextEntry ? "eye" : "eye-off"}
+            onPress={() => setSecureTextEntry(!secureTextEntry)}
+          />
+        }
+      />
+      <Button mode="contained" onPress={submitForm}>
+        Submit
+      </Button>
     </View>
   );
 };
 
 export default Login;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    padding: 8,
+  },
+  input: {
+    marginBottom: 10,
+  },
+});
