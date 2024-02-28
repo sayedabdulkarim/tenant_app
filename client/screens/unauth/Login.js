@@ -3,7 +3,7 @@ import { StatusBar, StyleSheet, Text, View } from "react-native";
 import { TextInput, Button } from "react-native-paper";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Header from "../../components/Header";
-import CountryPicker from "react-native-country-picker-modal";
+import CountryPicker, { DARK_THEME } from "react-native-country-picker-modal";
 
 const Login = () => {
   const [phone, setPhone] = React.useState("");
@@ -44,6 +44,7 @@ const Login = () => {
               withCallingCode: true,
               onSelect,
             }}
+            theme={DARK_THEME}
             visible={false} // You can toggle this with a state variable as needed
           />
 
