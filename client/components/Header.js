@@ -14,7 +14,7 @@ const Header = ({ back, emtpyCart = false }) => {
           style={{
             position: "absolute",
             left: 10,
-            top: 0,
+            top: 10,
             zIndex: 10,
           }}
           onPress={() => navigate.goBack()}

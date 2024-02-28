@@ -23,8 +23,8 @@ const Login = () => {
       <StatusBar barStyle="light-content" backgroundColor="lightgray" />
 
       <SafeAreaView style={styles.safeArea}>
+        <Header back={true} />
         <View style={styles.container}>
-          <Header back={true} />
           <Text>Login</Text>
           <Menu
             visible={menuVisible}
@@ -97,11 +97,13 @@ const styles = StyleSheet.create({
     // backgroundColor: "rgba(255, 215, 0, 1)", // This should be the same yellow as your StatusBar, but fully opaque
   },
   container: {
-    flex: 1,
+    // flex: 1,
     justifyContent: "center",
     padding: 8,
-    // borderWidth: 2,
-    // borderColor: "red",
+    borderWidth: 2,
+    borderColor: "red",
+    paddingHorizontal: 20,
+    marginTop: 80,
   },
   input: {
     marginBottom: 10,
