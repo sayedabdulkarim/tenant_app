@@ -1,64 +1,64 @@
 import * as React from "react";
 import { StatusBar, StyleSheet, Text, View } from "react-native";
-import { TextInput, Button, Menu, Provider } from "react-native-paper";
+import { TextInput, Button } from "react-native-paper";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Header from "../../components/Header";
+import CountryPicker from "react-native-country-picker-modal";
 
 const Login = () => {
   const [phone, setPhone] = React.useState("");
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
   const [secureTextEntry, setSecureTextEntry] = React.useState(true);
-  const [countryCode, setCountryCode] = React.useState("+1"); // Default country code
-  const [menuVisible, setMenuVisible] = React.useState(false);
+  const [country, setCountry] = React.useState(null);
+  const [countryCode, setCountryCode] = React.useState("US"); // Default country code to US
 
   const submitForm = () => {
-    console.log(`Phone: ${countryCode} ${phone}`);
+    console.log(
+      `Phone: ${country ? `+${country.callingCode[0]}` : ""} ${phone}`
+    );
     console.log(`Email: ${email}`);
     console.log(`Password: ${password}`);
   };
 
+  const onSelect = (country) => {
+    setCountryCode(country.cca2);
+    setCountry(country);
+  };
+
   return (
     <>
-      <StatusBar barStyle="light-content" backgroundColor="lightgray" />
-
+      <StatusBar barStyle="light-content" backgroundColor="#fff" />
       <SafeAreaView style={styles.safeArea}>
         <Header back={true} />
         <View style={styles.container}>
-          <Text>Login</Text>
-          <Menu
-            visible={menuVisible}
-            onDismiss={() => setMenuVisible(false)}
-            anchor={
-              <Button onPress={() => setMenuVisible(true)}>
-                {countryCode}
-              </Button>
-            }
-          >
-            {/* List your country codes here */}
-            <Menu.Item
-              onPress={() => {
-                setCountryCode("+1");
-                setMenuVisible(false);
-              }}
-              title="+1"
-            />
-            <Menu.Item
-              onPress={() => {
-                setCountryCode("+91");
-                setMenuVisible(false);
-              }}
-              title="+91"
-            />
-            {/* Add more Menu.Items as needed for other country codes */}
-          </Menu>
+          <Text style={styles.title}>Login | Register</Text>
+
+          <CountryPicker
+            {...{
+              countryCode,
+              withFilter: true,
+              withFlag: true,
+              withCountryNameButton: true,
+              withAlphaFilter: true,
+              withCallingCode: true,
+              onSelect,
+            }}
+            visible={false} // You can toggle this with a state variable as needed
+          />
+
           <TextInput
             label="Phone"
             value={phone}
             onChangeText={(text) => setPhone(text)}
             style={styles.input}
-            left={<TextInput.Affix text={countryCode} />}
+            left={
+              <TextInput.Affix
+                text={country ? `+${country.callingCode[0]}` : ""}
+              />
+            }
           />
+
           <TextInput
             label="Email"
             value={email}
@@ -66,6 +66,7 @@ const Login = () => {
             style={styles.input}
             keyboardType="email-address"
           />
+
           <TextInput
             label="Password"
             value={password}
@@ -79,8 +80,9 @@ const Login = () => {
               />
             }
           />
-          <Button mode="contained" onPress={submitForm}>
-            Submit
+
+          <Button mode="contained" onPress={submitForm} style={styles.button}>
+            Login | Register
           </Button>
         </View>
       </SafeAreaView>
@@ -93,19 +95,23 @@ export default Login;
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
-    // backgroundColor: "#FFD700", // Set your primary color here
-    // backgroundColor: "rgba(255, 215, 0, 1)", // This should be the same yellow as your StatusBar, but fully opaque
+    backgroundColor: "#fff",
   },
   container: {
-    // flex: 1,
-    justifyContent: "center",
+    flex: 1,
+    justifyContent: "space-between",
     padding: 8,
-    borderWidth: 2,
-    borderColor: "red",
     paddingHorizontal: 20,
-    marginTop: 80,
+  },
+  title: {
+    fontSize: 20,
+    fontWeight: "bold",
+    marginBottom: 16,
   },
   input: {
     marginBottom: 10,
+  },
+  button: {
+    marginTop: 10,
   },
 });
