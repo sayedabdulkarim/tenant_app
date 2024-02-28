@@ -2,6 +2,7 @@ import * as React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { TextInput, Button, Menu, Provider } from "react-native-paper";
 import { SafeAreaView } from "react-native-safe-area-context";
+import Header from "../../components/Header";
 
 const Login = () => {
   const [phone, setPhone] = React.useState("");
@@ -20,6 +21,7 @@ const Login = () => {
   return (
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.container}>
+        <Header back={true} />
         <Text>Login</Text>
         <Menu
           visible={menuVisible}
@@ -86,12 +88,14 @@ const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
     // backgroundColor: "#FFD700", // Set your primary color here
-    backgroundColor: "rgba(255, 215, 0, 1)", // This should be the same yellow as your StatusBar, but fully opaque
+    // backgroundColor: "rgba(255, 215, 0, 1)", // This should be the same yellow as your StatusBar, but fully opaque
   },
   container: {
     flex: 1,
     justifyContent: "center",
     padding: 8,
+    borderWidth: 2,
+    borderColor: "red",
   },
   input: {
     marginBottom: 10,
