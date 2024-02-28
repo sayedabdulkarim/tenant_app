@@ -67,7 +67,7 @@ const Login = () => {
           style={styles.input}
           right={
             <TextInput.Icon
-              name={secureTextEntry ? "eye" : "eye-off"}
+              icon={secureTextEntry ? "eye" : "eye-off"}
               onPress={() => setSecureTextEntry(!secureTextEntry)}
             />
           }
