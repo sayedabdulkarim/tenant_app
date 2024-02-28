@@ -34,31 +34,35 @@ const Login = () => {
         <View style={styles.container}>
           <Text style={styles.title}>Login | Register</Text>
 
-          <CountryPicker
-            {...{
-              countryCode,
-              withFilter: true,
-              withFlag: true,
-              withCountryNameButton: true,
-              withAlphaFilter: true,
-              withCallingCode: true,
-              onSelect,
-            }}
-            theme={DARK_THEME}
-            visible={false} // You can toggle this with a state variable as needed
-          />
-
-          <TextInput
-            label="Phone"
-            value={phone}
-            onChangeText={(text) => setPhone(text)}
-            style={styles.input}
-            left={
-              <TextInput.Affix
-                text={country ? `+${country.callingCode[0]}` : ""}
+          <View style={styles.phoneContainer}>
+            <View style={styles.countryPicker}>
+              <CountryPicker
+                {...{
+                  countryCode,
+                  withFilter: true,
+                  withFlag: true,
+                  withCountryNameButton: true,
+                  withAlphaFilter: true,
+                  withCallingCode: true,
+                  onSelect,
+                }}
+                theme={DARK_THEME}
+                visible={false}
               />
-            }
-          />
+            </View>
+
+            <TextInput
+              label="Phone"
+              value={phone}
+              onChangeText={(text) => setPhone(text)}
+              style={styles.phoneInput}
+              left={
+                <TextInput.Affix
+                  text={country ? `+${country.callingCode[0]} ` : ""}
+                />
+              }
+            />
+          </View>
 
           <TextInput
             label="Email"
@@ -94,6 +98,18 @@ const Login = () => {
 export default Login;
 
 const styles = StyleSheet.create({
+  phoneContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  countryPicker: {
+    flex: 1,
+  },
+  phoneInput: {
+    flex: 9,
+  },
+  //
+
   safeArea: {
     flex: 1,
     backgroundColor: "#fff",
