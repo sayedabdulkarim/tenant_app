@@ -1,5 +1,5 @@
 import * as React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StatusBar, StyleSheet, Text, View } from "react-native";
 import { TextInput, Button, Menu, Provider } from "react-native-paper";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Header from "../../components/Header";
@@ -19,66 +19,72 @@ const Login = () => {
   };
 
   return (
-    <SafeAreaView style={styles.safeArea}>
-      <View style={styles.container}>
-        <Header back={true} />
-        <Text>Login</Text>
-        <Menu
-          visible={menuVisible}
-          onDismiss={() => setMenuVisible(false)}
-          anchor={
-            <Button onPress={() => setMenuVisible(true)}>{countryCode}</Button>
-          }
-        >
-          {/* List your country codes here */}
-          <Menu.Item
-            onPress={() => {
-              setCountryCode("+1");
-              setMenuVisible(false);
-            }}
-            title="+1"
-          />
-          <Menu.Item
-            onPress={() => {
-              setCountryCode("+91");
-              setMenuVisible(false);
-            }}
-            title="+91"
-          />
-          {/* Add more Menu.Items as needed for other country codes */}
-        </Menu>
-        <TextInput
-          label="Phone"
-          value={phone}
-          onChangeText={(text) => setPhone(text)}
-          style={styles.input}
-          left={<TextInput.Affix text={countryCode} />}
-        />
-        <TextInput
-          label="Email"
-          value={email}
-          onChangeText={(text) => setEmail(text)}
-          style={styles.input}
-          keyboardType="email-address"
-        />
-        <TextInput
-          label="Password"
-          value={password}
-          onChangeText={(text) => setPassword(text)}
-          secureTextEntry={secureTextEntry}
-          style={styles.input}
-          right={
-            <TextInput.Icon
-              icon={secureTextEntry ? "eye" : "eye-off"}
-              onPress={() => setSecureTextEntry(!secureTextEntry)}
+    <>
+      <StatusBar barStyle="light-content" backgroundColor="lightgray" />
+
+      <SafeAreaView style={styles.safeArea}>
+        <View style={styles.container}>
+          <Header back={true} />
+          <Text>Login</Text>
+          <Menu
+            visible={menuVisible}
+            onDismiss={() => setMenuVisible(false)}
+            anchor={
+              <Button onPress={() => setMenuVisible(true)}>
+                {countryCode}
+              </Button>
+            }
+          >
+            {/* List your country codes here */}
+            <Menu.Item
+              onPress={() => {
+                setCountryCode("+1");
+                setMenuVisible(false);
+              }}
+              title="+1"
             />
-          }
-        />
-        <Button mode="contained" onPress={submitForm}>
-          Submit
-        </Button>
-      </View>
-    </SafeAreaView>
+            <Menu.Item
+              onPress={() => {
+                setCountryCode("+91");
+                setMenuVisible(false);
+              }}
+              title="+91"
+            />
+            {/* Add more Menu.Items as needed for other country codes */}
+          </Menu>
+          <TextInput
+            label="Phone"
+            value={phone}
+            onChangeText={(text) => setPhone(text)}
+            style={styles.input}
+            left={<TextInput.Affix text={countryCode} />}
+          />
+          <TextInput
+            label="Email"
+            value={email}
+            onChangeText={(text) => setEmail(text)}
+            style={styles.input}
+            keyboardType="email-address"
+          />
+          <TextInput
+            label="Password"
+            value={password}
+            onChangeText={(text) => setPassword(text)}
+            secureTextEntry={secureTextEntry}
+            style={styles.input}
+            right={
+              <TextInput.Icon
+                icon={secureTextEntry ? "eye" : "eye-off"}
+                onPress={() => setSecureTextEntry(!secureTextEntry)}
+              />
+            }
+          />
+          <Button mode="contained" onPress={submitForm}>
+            Submit
+          </Button>
+        </View>
+      </SafeAreaView>
+    </>
   );
 };
 
@@ -94,8 +100,8 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     padding: 8,
-    borderWidth: 2,
-    borderColor: "red",
+    // borderWidth: 2,
+    // borderColor: "red",
   },
   input: {
     marginBottom: 10,

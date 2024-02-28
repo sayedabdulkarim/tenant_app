@@ -26,7 +26,7 @@ const Index = () => {
       />
       <NavigationContainer>
         <Stack.Navigator
-          initialRouteName={"login"}
+          initialRouteName={"auth"}
           screenOptions={({}) => ({
             headerShown: false,
           })}
