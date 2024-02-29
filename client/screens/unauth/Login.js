@@ -4,6 +4,7 @@ import { TextInput, Button } from "react-native-paper";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Header from "../../components/Header";
 import CountryPicker, { DARK_THEME } from "react-native-country-picker-modal";
+import PhoneInput from "../../components/PhoneComponent";
 
 const Login = () => {
   const [phone, setPhone] = React.useState("");
@@ -33,6 +34,8 @@ const Login = () => {
         <Header back={true} />
         <View style={styles.container}>
           <Text style={styles.title}>Login | Register</Text>
+
+          <PhoneInput />
 
           <View style={styles.phoneContainer}>
             <View style={styles.countryPicker}>
