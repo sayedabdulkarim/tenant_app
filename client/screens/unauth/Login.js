@@ -151,7 +151,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
   inputContainer: {
-    marginVertical: 10,
+    marginTop: 10,
     backgroundColor: "#F8F9F9",
     borderWidth: 1,
     borderColor: "black",
