@@ -11,9 +11,14 @@ function hp(percentage) {
 }
 const styles = StyleSheet.create({
   container: {
-    width: wp(80),
-    backgroundColor: "white",
+    // width: wp(100),
+    backgroundColor: "#F8F9F9",
     flexDirection: "row",
+    borderWidth: 1,
+    borderColor: "black",
+    borderRadius: 8,
+    // paddingVertical: 2,
+    overflow: "hidden",
   },
   flagButtonView: {
     width: wp(20),
