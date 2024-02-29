@@ -103,25 +103,20 @@ const styles = StyleSheet.create({
     alignItems: "center",
     borderWidth: 2,
     borderColor: "green",
-    height: 60,
   },
   countryPicker: {
-    borderWidth: 1,
-    borderColor: "green",
-    flex: 1,
-    padding: 0,
     justifyContent: "center",
     alignItems: "center",
-    flexDirection: "column",
-    height: "100%",
+    height: 60, // Assuming the CountryPicker height is 60
+    width: 80, // Adjust the width as necessary to accommodate the flag and code
   },
   phoneInput: {
-    borderWidth: 1,
-    borderColor: "yellow",
-    flex: 9,
-    paddingVertical: 0,
-    paddingHorizontal: 0,
-    marginLeft: 10,
+    flex: 1, // This will fill the rest of the space
+    height: 60, // Match the height with CountryPicker
+    // Adjust padding as needed
+    paddingHorizontal: 10,
+    // Remove marginLeft if not needed
+    // Other styles as necessary
   },
   //
   safeArea: {
