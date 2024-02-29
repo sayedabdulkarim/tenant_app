@@ -106,9 +106,19 @@ const Login = () => {
             />
           </View>
 
-          <Button mode="contained" onPress={submitForm} style={styles.button}>
-            Login | Register
-          </Button>
+          <View style={styles.flexGrow} />
+
+          <View style={styles.submitButtonContainer}>
+            <Button mode="contained" onPress={submitForm} style={styles.button}>
+              Login | Register
+            </Button>
+
+            <Text style={styles.footerText}>
+              By continuing, you agree to the{" "}
+              <Text style={styles.linkText}>Term of Use</Text> and are aware of
+              the <Text style={styles.linkText}>Privacy Policy</Text>.
+            </Text>
+          </View>
         </View>
       </SafeAreaView>
     </PaperProvider>
@@ -121,6 +131,9 @@ const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
     backgroundColor: "#fff",
+  },
+  flexGrow: {
+    flex: 1,
   },
   container: {
     flex: 1,
@@ -149,7 +162,27 @@ const styles = StyleSheet.create({
     // borderWidth: 1,
     // borderColor: "red",
   },
+  submitButtonContainer: {
+    marginBottom: 50,
+  },
   button: {
-    marginTop: 10,
+    // If you want the button to be at the very bottom
+    // marginBottom: 20, // Adjust the value as needed
+    backgroundColor: "rgba(255, 215, 0, 1)",
+    width: "100%",
+    borderRadius: 8,
+    // backgroundColor: "#000",
+    padding: 8,
+    fontWeight: "bold",
+    fontWeight: "bold",
+  },
+  footerText: {
+    marginTop: 16, // Space between button and text
+    fontSize: 12,
+    textAlign: "center",
+  },
+  linkText: {
+    color: "blue", // Make terms and privacy policy look like links
+    textDecorationLine: "underline",
   },
 });
