@@ -11,7 +11,7 @@ const Login = () => {
   const [password, setPassword] = React.useState("");
   const [secureTextEntry, setSecureTextEntry] = React.useState(true);
   const [country, setCountry] = React.useState(null);
-  const [countryCode, setCountryCode] = React.useState("US"); // Default country code to US
+  const [countryCode, setCountryCode] = React.useState("IN");
 
   const submitForm = () => {
     console.log(
@@ -28,7 +28,7 @@ const Login = () => {
 
   return (
     <>
-      <StatusBar barStyle="light-content" backgroundColor="#fff" />
+      <StatusBar barStyle="light-content" backgroundColor="gray" />
       <SafeAreaView style={styles.safeArea}>
         <Header back={true} />
         <View style={styles.container}>
@@ -101,15 +101,29 @@ const styles = StyleSheet.create({
   phoneContainer: {
     flexDirection: "row",
     alignItems: "center",
+    borderWidth: 2,
+    borderColor: "green",
+    height: 60,
   },
   countryPicker: {
+    borderWidth: 1,
+    borderColor: "green",
     flex: 1,
+    padding: 0,
+    justifyContent: "center",
+    alignItems: "center",
+    flexDirection: "column",
+    height: "100%",
   },
   phoneInput: {
+    borderWidth: 1,
+    borderColor: "yellow",
     flex: 9,
+    paddingVertical: 0,
+    paddingHorizontal: 0,
+    marginLeft: 10,
   },
   //
-
   safeArea: {
     flex: 1,
     backgroundColor: "#fff",
