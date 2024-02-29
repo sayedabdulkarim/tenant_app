@@ -67,13 +67,15 @@ const Login = () => {
             />
           </View> */}
 
-          <TextInput
-            label="Email"
-            value={email}
-            onChangeText={(text) => setEmail(text)}
-            style={styles.input}
-            keyboardType="email-address"
-          />
+          <View style={styles.inputContainer}>
+            <TextInput
+              label="Email"
+              value={email}
+              onChangeText={(text) => setEmail(text)}
+              style={styles.input}
+              keyboardType="email-address"
+            />
+          </View>
 
           <TextInput
             label="Password"
@@ -101,44 +103,37 @@ const Login = () => {
 export default Login;
 
 const styles = StyleSheet.create({
-  phoneContainer: {
-    flexDirection: "row",
-    alignItems: "center",
-    borderWidth: 2,
-    borderColor: "green",
-  },
-  countryPicker: {
-    justifyContent: "center",
-    alignItems: "center",
-    height: 60, // Assuming the CountryPicker height is 60
-    width: 80, // Adjust the width as necessary to accommodate the flag and code
-  },
-  phoneInput: {
-    flex: 1, // This will fill the rest of the space
-    height: 60, // Match the height with CountryPicker
-    // Adjust padding as needed
-    paddingHorizontal: 10,
-    // Remove marginLeft if not needed
-    // Other styles as necessary
-  },
-  //
   safeArea: {
     flex: 1,
     backgroundColor: "#fff",
   },
   container: {
     flex: 1,
-    justifyContent: "space-between",
+    // justifyContent: "space-between",
     padding: 8,
     paddingHorizontal: 20,
+    marginTop: 72,
+    borderWidth: 2,
+    borderColor: "red",
   },
   title: {
-    fontSize: 20,
+    fontSize: 24,
     fontWeight: "bold",
     marginBottom: 16,
+    textAlign: "center",
+  },
+  inputContainer: {
+    backgroundColor: "#F8F9F9",
+    borderWidth: 1,
+    borderColor: "black",
+    borderRadius: 8,
+    // paddingVertical: 2,
+    overflow: "hidden",
+    marginVertical: 10,
   },
   input: {
-    marginBottom: 10,
+    borderWidth: 1,
+    // borderColor: "red",
   },
   button: {
     marginTop: 10,
