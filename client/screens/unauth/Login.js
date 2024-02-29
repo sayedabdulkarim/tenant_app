@@ -141,8 +141,8 @@ const styles = StyleSheet.create({
     padding: 8,
     paddingHorizontal: 20,
     marginTop: 72,
-    borderWidth: 2,
-    borderColor: "red",
+    // borderWidth: 2,
+    // borderColor: "red",
   },
   title: {
     fontSize: 24,
@@ -174,15 +174,16 @@ const styles = StyleSheet.create({
     // backgroundColor: "#000",
     padding: 8,
     fontWeight: "bold",
-    fontWeight: "bold",
   },
   footerText: {
     marginTop: 16, // Space between button and text
-    fontSize: 12,
+    fontSize: 14,
     textAlign: "center",
+    color: "gray",
+    fontWeight: "bold",
   },
   linkText: {
-    color: "blue", // Make terms and privacy policy look like links
+    color: "black", // Make terms and privacy policy look like links
     textDecorationLine: "underline",
   },
 });
