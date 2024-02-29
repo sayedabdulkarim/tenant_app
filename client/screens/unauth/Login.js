@@ -12,11 +12,10 @@ const Login = () => {
   const inputTheme = {
     roundness: 8, // You can adjust the roundness to match your design
     colors: {
-      // primary: "yellow", // color of the underline and placeholder when active
-      // underlineColor: "transparent", // hide the underline
+      underlineColor: "transparent", // hide the underline
+      placeholder: "yellow",
       background: "red", // background color of the input
       text: "black", // text color for the input text
-      placeholder: "yellow", // color of the placeholder text when not focused
     },
   };
 
