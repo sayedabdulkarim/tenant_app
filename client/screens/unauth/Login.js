@@ -5,8 +5,22 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import Header from "../../components/Header";
 import CountryPicker, { DARK_THEME } from "react-native-country-picker-modal";
 import PhoneInput from "../../components/PhoneComponentTwo";
+import { Provider as PaperProvider, DefaultTheme } from "react-native-paper";
 
 const Login = () => {
+  //misc
+  const inputTheme = {
+    roundness: 8, // You can adjust the roundness to match your design
+    colors: {
+      // primary: "yellow", // color of the underline and placeholder when active
+      // underlineColor: "transparent", // hide the underline
+      background: "red", // background color of the input
+      text: "black", // text color for the input text
+      placeholder: "yellow", // color of the placeholder text when not focused
+    },
+  };
+
+  //state
   const [phone, setPhone] = React.useState("");
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
@@ -28,7 +42,7 @@ const Login = () => {
   };
 
   return (
-    <>
+    <PaperProvider theme={inputTheme}>
       <StatusBar barStyle="light-content" backgroundColor="gray" />
       <SafeAreaView style={styles.safeArea}>
         <Header back={true} />
@@ -77,26 +91,28 @@ const Login = () => {
             />
           </View>
 
-          <TextInput
-            label="Password"
-            value={password}
-            onChangeText={(text) => setPassword(text)}
-            secureTextEntry={secureTextEntry}
-            style={styles.input}
-            right={
-              <TextInput.Icon
-                icon={secureTextEntry ? "eye" : "eye-off"}
-                onPress={() => setSecureTextEntry(!secureTextEntry)}
-              />
-            }
-          />
+          <View style={styles.inputContainer}>
+            <TextInput
+              label="Password"
+              value={password}
+              onChangeText={(text) => setPassword(text)}
+              secureTextEntry={secureTextEntry}
+              style={styles.input}
+              right={
+                <TextInput.Icon
+                  icon={secureTextEntry ? "eye" : "eye-off"}
+                  onPress={() => setSecureTextEntry(!secureTextEntry)}
+                />
+              }
+            />
+          </View>
 
           <Button mode="contained" onPress={submitForm} style={styles.button}>
             Login | Register
           </Button>
         </View>
       </SafeAreaView>
-    </>
+    </PaperProvider>
   );
 };
 
@@ -123,16 +139,15 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
   inputContainer: {
+    marginVertical: 10,
     backgroundColor: "#F8F9F9",
     borderWidth: 1,
     borderColor: "black",
     borderRadius: 8,
-    // paddingVertical: 2,
     overflow: "hidden",
-    marginVertical: 10,
   },
   input: {
-    borderWidth: 1,
+    // borderWidth: 1,
     // borderColor: "red",
   },
   button: {
