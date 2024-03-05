@@ -25,8 +25,8 @@ const Footer = ({ activeRoute = "home" }) => {
       >
         <Avatar.Icon
           icon={isActive ? iconName : `${iconName}-outline`}
-          size={24}
-          color={isActive ? "yellow" : "white"}
+          size={48}
+          color={isActive ? "black" : "white"}
         />
         {notificationCount > 0 && route === "chat" && (
           <View style={styles.badgeContainer}>
@@ -42,7 +42,7 @@ const Footer = ({ activeRoute = "home" }) => {
       {renderTabItem("home", "home")}
       {renderTabItem("cart", "cart")}
       {renderTabItem("account", "profile")}
-      {renderTabItem("forum", "chat")}
+      {renderTabItem("forum", "chat", 15)}
     </View>
   );
 };
@@ -52,15 +52,15 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-around",
     backgroundColor: "#FFE119",
-    paddingVertical: 20,
+    paddingVertical: 10,
   },
   badgeContainer: {
     position: "absolute",
-    right: -6,
+    right: 6,
     top: -3,
     backgroundColor: "red",
     borderRadius: 8,
-    width: 16,
+    width: 26,
     height: 16,
     justifyContent: "center",
     alignItems: "center",
