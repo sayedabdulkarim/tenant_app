@@ -1,129 +1,75 @@
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import React from "react";
+import { StyleSheet, View, TouchableOpacity, Text } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import { useDispatch, useSelector } from "react-redux";
-import { colors } from "../styles/common";
 import { Avatar } from "react-native-paper";
 
 const Footer = ({ activeRoute = "home" }) => {
-  //misc
   const navigation = useNavigation();
-  const loading = false;
-  const { userInfo, isAuthenticated } = useSelector(
-    (state) => state.authReducer
-  );
-  // const isAuthenticated = false;
-  //func
-  const navigationHandler = (key) => {
-    switch (key) {
-      case 0:
-        navigation.navigate("home");
-        break;
-      case 1:
-        navigation.navigate("cart");
-        break;
-      case 2:
-        isAuthenticated
-          ? navigation.navigate("profile")
-          : navigation.navigate("login");
-        break;
+  const isAuthenticated = false;
 
-      default:
-        navigation.navigate("home");
-        break;
+  const navigationHandler = (route) => {
+    if (route === "login" && !isAuthenticated) {
+      navigation.navigate("login");
+    } else {
+      navigation.navigate(route);
     }
   };
 
-  return (
-    loading === false && (
-      <View
-        style={{
-          backgroundColor: colors.color1,
-          borderTopLeftRadius: 120,
-          borderTopRightRadius: 120,
-        }}
+  const renderTabItem = (iconName, route, notificationCount) => {
+    const isActive = activeRoute === route;
+    return (
+      <TouchableOpacity
+        activeOpacity={0.8}
+        onPress={() => navigationHandler(route)}
+        style={styles.tabItem}
       >
-        <View
-          style={{
-            flexDirection: "row",
-            justifyContent: "space-evenly",
-          }}
-        >
-          <TouchableOpacity
-            activeOpacity={0.8}
-            onPress={() => navigationHandler(1)}
-          >
-            <Avatar.Icon
-              icon={activeRoute === "cart" ? "shopping" : "shopping-outline"}
-              color={colors.color2}
-              size={50}
-              style={{
-                backgroundColor: colors.color1,
-              }}
-            />
-          </TouchableOpacity>
-
-          <TouchableOpacity
-            activeOpacity={0.8}
-            onPress={() => navigationHandler(2)}
-          >
-            <Avatar.Icon
-              icon={
-                isAuthenticated === false
-                  ? "login"
-                  : activeRoute === "profile"
-                  ? "account"
-                  : "account-outline"
-              }
-              color={colors.color2}
-              size={50}
-              style={{
-                backgroundColor: colors.color1,
-              }}
-            />
-          </TouchableOpacity>
-        </View>
-
-        <View
-          style={{
-            position: "absolute",
-            width: 80,
-            height: 80,
-            backgroundColor: colors.color2,
-            borderRadius: 100,
-            justifyContent: "center",
-            alignItems: "center",
-            top: -50,
-            alignSelf: "center",
-            elevation: 50,
-          }}
-        >
-          <View
-            style={{
-              borderRadius: 100,
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <TouchableOpacity
-              activeOpacity={0.8}
-              onPress={() => navigationHandler(0)}
-            >
-              <Avatar.Icon
-                icon={activeRoute === "home" ? "home" : "home-outline"}
-                color={colors.color2}
-                size={50}
-                style={{
-                  backgroundColor: colors.color1,
-                }}
-              />
-            </TouchableOpacity>
+        <Avatar.Icon
+          icon={isActive ? iconName : `${iconName}-outline`}
+          size={24}
+          color={isActive ? "yellow" : "white"}
+        />
+        {notificationCount > 0 && route === "chat" && (
+          <View style={styles.badgeContainer}>
+            <Text style={styles.badgeText}>{notificationCount}</Text>
           </View>
-        </View>
-      </View>
-    )
+        )}
+      </TouchableOpacity>
+    );
+  };
+
+  return (
+    <View style={styles.container}>
+      {renderTabItem("home", "home")}
+      {renderTabItem("cart", "cart")}
+      {renderTabItem("account", "profile")}
+      {renderTabItem("forum", "chat")}
+    </View>
   );
 };
 
-export default Footer;
+const styles = StyleSheet.create({
+  container: {
+    flexDirection: "row",
+    justifyContent: "space-around",
+    backgroundColor: "#333",
+    paddingVertical: 10,
+  },
+  badgeContainer: {
+    position: "absolute",
+    right: -6,
+    top: -3,
+    backgroundColor: "red",
+    borderRadius: 8,
+    width: 16,
+    height: 16,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  badgeText: {
+    color: "white",
+    fontSize: 10,
+    fontWeight: "bold",
+  },
+});
 
-const styles = StyleSheet.create({});
+export default Footer;

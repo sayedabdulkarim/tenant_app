@@ -6,6 +6,7 @@ import Header from "../../components/Header";
 import CountryPicker, { DARK_THEME } from "react-native-country-picker-modal";
 import PhoneInput from "../../components/PhoneComponentTwo";
 import { Provider as PaperProvider, DefaultTheme } from "react-native-paper";
+import Footer from "../../components/Footer";
 
 const Login = () => {
   //misc
@@ -121,6 +122,7 @@ const Login = () => {
           </View>
         </View>
       </SafeAreaView>
+      <Footer />
     </PaperProvider>
   );
 };
