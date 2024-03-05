@@ -51,8 +51,8 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
     justifyContent: "space-around",
-    backgroundColor: "#333",
-    paddingVertical: 10,
+    backgroundColor: "#FFE119",
+    paddingVertical: 20,
   },
   badgeContainer: {
     position: "absolute",

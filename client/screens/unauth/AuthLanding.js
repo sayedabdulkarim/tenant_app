@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
     // backgroundColor: "#FFD700", // Set your primary color here
-    backgroundColor: "rgba(255, 215, 0, 1)", // This should be the same yellow as your StatusBar, but fully opaque
+    backgroundColor: "#FFE119", // This should be the same yellow as your StatusBar, but fully opaque
   },
   container: {
     flex: 1,

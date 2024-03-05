@@ -20,10 +20,7 @@ import Login from "../screens/unauth/Login";
 const Index = () => {
   return (
     <>
-      <StatusBar
-        backgroundColor="rgba(255, 215, 0, 0.9)"
-        barStyle="dark-content"
-      />
+      <StatusBar backgroundColor="#FFE119" barStyle="dark-content" />
       <NavigationContainer>
         <Stack.Navigator
           initialRouteName={"auth"}

@@ -43,7 +43,8 @@ const Login = () => {
 
   return (
     <PaperProvider theme={inputTheme}>
-      <StatusBar barStyle="light-content" backgroundColor="gray" />
+      {/* <StatusBar barStyle="light-content" backgroundColor="#eee" /> */}
+      <StatusBar barStyle="light-content" backgroundColor="#bebebe" />
       <SafeAreaView style={styles.safeArea}>
         <Header back={true} />
         <View style={styles.container}>
@@ -170,7 +171,7 @@ const styles = StyleSheet.create({
   button: {
     // If you want the button to be at the very bottom
     // marginBottom: 20, // Adjust the value as needed
-    backgroundColor: "rgba(255, 215, 0, 1)",
+    backgroundColor: "#FFE119",
     width: "100%",
     borderRadius: 8,
     // backgroundColor: "#000",
