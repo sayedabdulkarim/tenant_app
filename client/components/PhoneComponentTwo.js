@@ -8,7 +8,7 @@ import CountryPicker, {
   Flag,
 } from "react-native-country-picker-modal";
 import { PhoneNumberUtil } from "google-libphonenumber";
-import styles from "../utils/styles";
+import styles from "../styles/common";
 
 const dropDown =
   "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAi0lEQVRYR+3WuQ6AIBRE0eHL1T83FBqU5S1szdiY2NyTKcCAzU/Y3AcBXIALcIF0gRPAsehgugDEXnYQrUC88RIgfpuJ+MRrgFmILN4CjEYU4xJgFKIa1wB6Ec24FuBFiHELwIpQxa0ALUId9wAkhCnuBdQQ5ngP4I9wxXsBDyJ9m+8y/g9wAS7ABW4giBshQZji3AAAAABJRU5ErkJggg==";
