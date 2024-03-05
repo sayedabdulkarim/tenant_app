@@ -9,7 +9,7 @@ function hp(percentage) {
   const value = (percentage * viewportHeight) / 100;
   return Math.round(value);
 }
-const styles = StyleSheet.create({
+export const phoneInputStyles = StyleSheet.create({
   container: {
     // width: wp(100),
     backgroundColor: "#F8F9F9",
@@ -66,8 +66,6 @@ const styles = StyleSheet.create({
     flex: 1,
   },
 });
-
-export default styles;
 
 //change the color name
 export const colors = {
