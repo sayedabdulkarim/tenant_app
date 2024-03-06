@@ -22,7 +22,8 @@ const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
     backgroundColor: "#fff",
-    // borderWidth: 1,
-    // borderColor: "red",
+    borderWidth: 1,
+    borderColor: "red",
+    paddingTop: 10,
   },
 });
