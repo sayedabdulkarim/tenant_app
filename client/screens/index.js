@@ -17,20 +17,27 @@ const Stack = createNativeStackNavigator();
 import AuthLanding from "./unauth/AuthLanding";
 import Login from "../screens/unauth/Login";
 
+//auth
+import HomeScreen from "../screens/auth/Home";
+
 const Index = () => {
   return (
     <>
       <StatusBar backgroundColor="#FFE119" barStyle="dark-content" />
       <NavigationContainer>
         <Stack.Navigator
-          initialRouteName={"auth"}
+          initialRouteName={"home"}
           screenOptions={({}) => ({
             headerShown: false,
           })}
         >
           <Stack.Group>
+            {/* unauth */}
             <Stack.Screen name="auth" component={AuthLanding} />
             <Stack.Screen name="login" component={Login} />
+
+            {/* auth */}
+            <Stack.Screen name="home" component={HomeScreen} />
           </Stack.Group>
         </Stack.Navigator>
       </NavigationContainer>
