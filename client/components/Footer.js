@@ -27,6 +27,7 @@ const Footer = ({ activeRoute = "home" }) => {
           icon={isActive ? iconName : `${iconName}-outline`}
           size={48}
           color={isActive ? "black" : "white"}
+          style={styles.icon}
         />
         {notificationCount > 0 && route === "chat" && (
           <View style={styles.badgeContainer}>
@@ -69,6 +70,9 @@ const styles = StyleSheet.create({
     color: "white",
     fontSize: 10,
     fontWeight: "bold",
+  },
+  icon: {
+    backgroundColor: "transparent",
   },
 });
 
