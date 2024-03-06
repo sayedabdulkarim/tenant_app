@@ -1,8 +1,9 @@
-import { StatusBar, StyleSheet, Text, View } from "react-native";
+import { ScrollView, StatusBar, StyleSheet, Text, View } from "react-native";
 import React from "react";
 import SearchComponent from "../../components/SearchComponent";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Footer from "../../components/Footer";
+import SliderComponent from "../../components/SliderComponent";
 
 const Home = () => {
   return (
@@ -10,6 +11,20 @@ const Home = () => {
       <StatusBar barStyle="light-content" backgroundColor="#bebebe" />
       <SafeAreaView style={styles.safeArea}>
         <SearchComponent />
+        <ScrollView>
+          <SliderComponent />
+          <Text>Hello</Text>
+          <Text>Hello</Text>
+          <Text>Hello</Text>
+          <Text>Hello</Text>
+          <Text>Hello</Text>
+          <Text>Hello</Text>
+          <Text>Hello</Text>
+          <Text>Hello</Text>
+          <Text>Hello</Text>
+          <Text>Hello</Text>
+          <Text>Hello</Text>
+        </ScrollView>
       </SafeAreaView>
       <Footer />
     </>

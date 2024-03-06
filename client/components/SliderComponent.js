@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const SwiperComponent = () => {
+const SliderComponent = () => {
   return (
     <Swiper style={styles.wrapper} showsButtons={true}>
       <View style={styles.slide1}>
@@ -45,4 +45,4 @@ const SwiperComponent = () => {
   );
 };
 
-export default SwiperComponent;
+export default SliderComponent;
