@@ -3,7 +3,6 @@ import { StatusBar, StyleSheet, Text, View } from "react-native";
 import { TextInput, Button } from "react-native-paper";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Header from "../../components/Header";
-import CountryPicker, { DARK_THEME } from "react-native-country-picker-modal";
 import PhoneInput from "../../components/PhoneComponentTwo";
 import { Provider as PaperProvider, DefaultTheme } from "react-native-paper";
 import Footer from "../../components/Footer";

@@ -1,15 +1,13 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StatusBar, StyleSheet, Text, View } from "react-native";
 import React from "react";
 import SearchComponent from "../../components/SearchComponent";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const Home = () => {
   return (
     <View>
-      <Text>Home</Text>
-      <Text>Home</Text>
-      <Text>Home</Text>
-      <Text>Home</Text>
-      <Text>Home</Text>
+      <StatusBar barStyle="light-content" backgroundColor="#bebebe" />
+      <SafeAreaView style={styles.safeArea}></SafeAreaView>
       <SearchComponent />
     </View>
   );
@@ -17,4 +15,9 @@ const Home = () => {
 
 export default Home;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  safeArea: {
+    flex: 1,
+    backgroundColor: "#fff",
+  },
+});

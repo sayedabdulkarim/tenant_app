@@ -1,18 +1,25 @@
 import React from "react";
 import { View, TextInput, StyleSheet, TouchableOpacity } from "react-native";
-import Icon from "react-native-vector-icons/FontAwesome"; // Assuming you're using FontAwesome
+import { Avatar } from "react-native-paper";
 
 const SearchComponent = () => {
   return (
     <View style={styles.container}>
-      <Icon name="search" size={20} color="#000" style={styles.searchIcon} />
-      <TextInput placeholder="Search Property" style={styles.input} />
-      <TouchableOpacity>
-        <Icon
-          name="heart-o"
-          size={20}
+      <View style={styles.searchContainer}>
+        <Avatar.Icon
+          icon="magnify"
+          size={40}
           color="#000"
-          style={styles.favoriteIcon}
+          style={styles.searchIcon}
+        />
+        <TextInput placeholder="Search Property" style={styles.input} />
+      </View>
+      <TouchableOpacity style={styles.favoriteIconContainer}>
+        <Avatar.Icon
+          icon="heart-outline"
+          size={40}
+          color="#000"
+          style={styles.searchIcon}
         />
       </TouchableOpacity>
     </View>
@@ -22,14 +29,20 @@ const SearchComponent = () => {
 const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
+    alignItems: "center",
+    width: "100%",
+    paddingHorizontal: 12,
+  },
+  searchContainer: {
+    flexDirection: "row",
     backgroundColor: "#fff",
     borderWidth: 1,
     borderColor: "#000",
     borderRadius: 30,
     padding: 10,
     alignItems: "center",
-    justifyContent: "space-between",
-    width: "80%", // Set this to the width you want
+    flex: 1,
+    marginRight: 10,
   },
   input: {
     flex: 1,
@@ -37,11 +50,9 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   searchIcon: {
-    marginRight: 10,
+    backgroundColor: "transparent",
   },
-  favoriteIcon: {
-    marginLeft: 10,
-  },
+  favoriteIconContainer: {},
 });
 
 export default SearchComponent;
