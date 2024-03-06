@@ -1,33 +1,49 @@
-import * as React from "react";
-import { Dimensions, Text, View } from "react-native";
-import Carousel from "react-native-reanimated-carousel";
+import React, { Component } from "react";
+import { StyleSheet, Text, View } from "react-native";
 
-function Index() {
-  const width = Dimensions.get("window").width;
-  return (
-    <View style={{ flex: 1 }}>
-      <Carousel
-        loop
-        width={width}
-        height={width / 2}
-        autoPlay={true}
-        data={[...new Array(6).keys()]}
-        scrollAnimationDuration={1000}
-        // onSnapToItem={(index) => console.log("current index:", index)}
-        renderItem={({ index }) => (
-          <View
-            style={{
-              flex: 1,
-              borderWidth: 1,
-              justifyContent: "center",
-            }}
-          >
-            <Text style={{ textAlign: "center", fontSize: 30 }}>{index}</Text>
-          </View>
-        )}
-      />
-    </View>
-  );
+import Swiper from "react-native-swiper";
+
+const styles = StyleSheet.create({
+  wrapper: {},
+  slide1: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#9DD6EB",
+  },
+  slide2: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#97CAE5",
+  },
+  slide3: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#92BBD9",
+  },
+  text: {
+    color: "#fff",
+    fontSize: 30,
+    fontWeight: "bold",
+  },
+});
+
+export default class SwiperComponent extends Component {
+  render() {
+    return (
+      <Swiper style={styles.wrapper} showsButtons={true}>
+        <View style={styles.slide1}>
+          <Text style={styles.text}>Hello Swiper</Text>
+        </View>
+        <View style={styles.slide2}>
+          <Text style={styles.text}>Beautiful</Text>
+        </View>
+        <View style={styles.slide3}>
+          <Text style={styles.text}>And simple</Text>
+        </View>
+      </Swiper>
+    );
+  }
 }
-
-export default Index;
