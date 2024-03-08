@@ -22,7 +22,7 @@ const PromotionSlider = () => {
     >
       {/* Your Views/Slides */}
       <View style={styles.slide}>
-        <Text style={styles.text}>Slide 1 Content</Text>
+        {/* <Text style={styles.text}>Slide 1 Content</Text> */}
         <Image
           source={{
             uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLCIvyusG0J6aJBOGizPc9E9FSiNEJ_5GZFjMeH81okdmIevDgsqRBDrs0Ru-o0kGXJaQ",
@@ -31,7 +31,7 @@ const PromotionSlider = () => {
         />
       </View>
       <View style={styles.slide}>
-        <Text style={styles.text}>Slide 1 Content</Text>
+        {/* <Text style={styles.text}>Slide 1 Content</Text> */}
         <Image
           source={{
             uri: "https://images.ctfassets.net/hrltx12pl8hq/28ECAQiPJZ78hxatLTa7Ts/2f695d869736ae3b0de3e56ceaca3958/free-nature-images.jpg?fit=fill&w=1200&h=630",
@@ -40,7 +40,7 @@ const PromotionSlider = () => {
         />
       </View>
       <View style={styles.slide}>
-        <Text style={styles.text}>Slide 1 Content</Text>
+        {/* <Text style={styles.text}>Slide 1 Content</Text> */}
         <Image
           source={{
             uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLCIvyusG0J6aJBOGizPc9E9FSiNEJ_5GZFjMeH81okdmIevDgsqRBDrs0Ru-o0kGXJaQ",
@@ -49,7 +49,7 @@ const PromotionSlider = () => {
         />
       </View>
       <View style={styles.slide}>
-        <Text style={styles.text}>Slide 1 Content</Text>
+        {/* <Text style={styles.text}>Slide 1 Content</Text> */}
         <Image
           source={{
             uri: "https://images.ctfassets.net/hrltx12pl8hq/28ECAQiPJZ78hxatLTa7Ts/2f695d869736ae3b0de3e56ceaca3958/free-nature-images.jpg?fit=fill&w=1200&h=630",
@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
     height: 200, // Set the height of the slider
   },
   slide: {
-    width: width - 20, // Width of the slide minus margin
+    width: width - 50, // Width of the slide minus margin
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: "green", // Background color for your slide
@@ -78,7 +78,8 @@ const styles = StyleSheet.create({
     borderColor: "red",
   },
   slideImage: {
-    width: width - 40, // Full width of the slide minus margin on both sides
+    // width: width - 40, // Full width of the slide minus margin on both sides
+    width: "100%", // Full width of the slide minus margin on both sides
     height: 150, // Adjust the height as needed
     resizeMode: "cover", // Cover the entire area of the slide
   },

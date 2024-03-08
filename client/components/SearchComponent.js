@@ -32,6 +32,9 @@ const styles = StyleSheet.create({
     alignItems: "center",
     width: "100%",
     paddingHorizontal: 12,
+    // borderWidth: 1,
+    // borderColor: "green",
+    marginBottom: 10,
   },
   searchContainer: {
     flexDirection: "row",
