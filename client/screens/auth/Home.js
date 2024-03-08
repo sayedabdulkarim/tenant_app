@@ -11,8 +11,8 @@ const Home = () => {
     <>
       <StatusBar barStyle="light-content" backgroundColor="#bebebe" />
       <SafeAreaView style={styles.safeArea}>
-        {/* <SearchComponent /> */}
-        <ScrollView>
+        <SearchComponent />
+        <ScrollView showsVerticalScrollIndicator={false}>
           <PromotionSlider />
           <SliderComponent />
           <Text>Hello</Text>
