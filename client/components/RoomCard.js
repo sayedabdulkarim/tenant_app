@@ -31,7 +31,11 @@ const RoomCard = ({ setParentSwipeEnabled }) => {
 export default RoomCard;
 
 const styles = StyleSheet.create({
-  container: {},
+  container: {
+    borderWidth: 1,
+    borderColor: "red",
+    // padding: 12,
+  },
   HeaderText: {
     fontSize: 22,
     fontWeight: "bold",
@@ -41,8 +45,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   scroll: {
-    borderWidth: 2,
-    borderColor: "green",
+    //   borderWidth: 2,
+    // borderColor: "green",
   },
-  // ... (Any other styles you need)
 });

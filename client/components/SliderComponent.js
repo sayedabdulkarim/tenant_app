@@ -72,8 +72,8 @@ export default SliderComponent;
 
 const styles = StyleSheet.create({
   container: {
-    borderWidth: 1,
-    borderColor: "red",
+    //borderWidth: 1,
+    //borderColor: "red",
     padding: 12,
     width: screenWidth,
   },
