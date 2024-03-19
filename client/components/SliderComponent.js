@@ -1,7 +1,16 @@
 import React from "react";
 import { StyleSheet, Text, View, Image, Dimensions } from "react-native";
 import Swiper from "react-native-swiper";
+import { MaterialIcons, FontAwesome } from "@expo/vector-icons"; // Import MaterialIcons from Expo
+
 const { width: screenWidth } = Dimensions.get("window");
+
+const IconWithLabel = ({ iconName, label, color }) => (
+  <View style={styles.iconContainer}>
+    <MaterialIcons name={iconName} size={24} color={color} />
+    <Text style={[styles.label, { color }]}>{label}</Text>
+  </View>
+);
 
 const SliderComponent = ({ belowText }) => {
   return (
@@ -77,7 +86,13 @@ const SliderComponent = ({ belowText }) => {
           </View>
         </View>
         <Text style={styles.addressText}>Bandar Bukit Puchong</Text>
-        <View style={styles.propertySpecs}></View>
+        <View style={styles.propertySpecs}>
+          <IconWithLabel iconName="business" label="High-Rise" color="gray" />
+          {/* <IconWithLabel iconName="local-parking" label="0" color="gray" /> */}
+          <FontAwesome name="bed" size={24} color="black" />
+          <IconWithLabel iconName="elevator" label="1" color="gray" />
+          <IconWithLabel iconName="directions-car" label="0" color="gray" />
+        </View>
       </View>
     </View>
   );
@@ -97,7 +112,19 @@ const styles = StyleSheet.create({
     fontWeight: 700,
     marginVertical: 10,
   },
-  propertySpecs: {},
+  propertySpecs: {
+    flexDirection: "row",
+    justifyContent: "space-around",
+    alignItems: "center",
+  },
+  iconContainer: {
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  label: {
+    fontSize: 16,
+    marginTop: 4,
+  },
   detailContainer: {
     borderWidth: 1,
     borderColor: "green",
