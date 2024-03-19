@@ -76,6 +76,8 @@ const SliderComponent = ({ belowText }) => {
             <Text style={styles.unit}>WHOLE UNIT</Text>
           </View>
         </View>
+        <Text style={styles.addressText}>Bandar Bukit Puchong</Text>
+        <View style={styles.propertySpecs}></View>
       </View>
     </View>
   );
@@ -90,6 +92,12 @@ const styles = StyleSheet.create({
     padding: 12,
     width: screenWidth,
   },
+  addressText: {
+    fontSize: 18,
+    fontWeight: 700,
+    marginVertical: 10,
+  },
+  propertySpecs: {},
   detailContainer: {
     borderWidth: 1,
     borderColor: "green",
