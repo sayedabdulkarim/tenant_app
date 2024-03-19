@@ -123,8 +123,8 @@ const styles = StyleSheet.create({
   },
   addressText: {
     fontSize: 18,
-    fontWeight: 700,
-    marginVertical: 10,
+    fontWeight: 800,
+    marginVertical: 20,
   },
   propertySpecs: {
     flexDirection: "row",
