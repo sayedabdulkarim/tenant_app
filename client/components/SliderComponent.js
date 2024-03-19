@@ -65,7 +65,15 @@ const SliderComponent = ({ belowText }) => {
         </View>
       </Swiper>
       <View style={styles.detailContainer}>
-        <Text>{belowText}</Text>
+        <View style={styles.priceContainer}>
+          <View style={styles.leftContainer}>
+            <Text style={styles.price}>RM 1,400</Text>
+          </View>
+          <View style={styles.rightContainer}>
+            <Text style={styles.deposit}>ZERO DEPOSIT</Text>
+            <Text style={styles.unit}>WHOLE UNIT</Text>
+          </View>
+        </View>
       </View>
     </View>
   );
@@ -89,6 +97,27 @@ const styles = StyleSheet.create({
     borderBottomRightRadius: 10,
     borderBottomLeftRadius: 10,
   },
+  priceContainer: {
+    borderWidth: 1,
+    borderColor: "red",
+    flexDirection: "row",
+    // justifyContent: "space-between",
+    alignItems: "center",
+    width: "100%",
+  },
+  leftContainer: {
+    borderWidth: 1,
+    borderColor: "yellow",
+    width: "30%",
+  },
+  rightContainer: {
+    borderWidth: 1,
+    borderColor: "green",
+    width: "70%",
+    flexDirection: "row",
+    justifyContent: "space-between",
+  },
+  //
   wrapper: {
     height: 250,
     // borderRadius: 12,
