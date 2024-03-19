@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, Image, Dimensions } from "react-native";
 import Swiper from "react-native-swiper";
 const { width: screenWidth } = Dimensions.get("window");
 
-const SliderComponent = () => {
+const SliderComponent = ({ belowText }) => {
   return (
     <View style={styles.container}>
       <Swiper
@@ -64,6 +64,9 @@ const SliderComponent = () => {
           <Text style={styles.text}>And simple</Text>
         </View>
       </Swiper>
+      <View style={styles.detailContainer}>
+        <Text>{belowText}</Text>
+      </View>
     </View>
   );
 };
@@ -76,6 +79,13 @@ const styles = StyleSheet.create({
     //borderColor: "red",
     padding: 12,
     width: screenWidth,
+  },
+  detailContainer: {
+    borderWidth: 1,
+    borderColor: "green",
+    paddingTop: 10,
+    paddingBottom: 15,
+    paddingHorizontal: 5,
   },
   wrapper: {
     height: 250,
