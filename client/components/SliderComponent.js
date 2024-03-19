@@ -155,7 +155,7 @@ const styles = StyleSheet.create({
   },
   detailContainer: {
     borderWidth: 1,
-    borderColor: "green",
+    borderColor: "#eee",
     paddingTop: 10,
     paddingBottom: 15,
     paddingHorizontal: 5,
