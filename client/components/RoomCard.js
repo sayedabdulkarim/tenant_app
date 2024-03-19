@@ -34,14 +34,18 @@ export default RoomCard;
 
 const styles = StyleSheet.create({
   container: {
-    borderWidth: 1,
-    borderColor: "red",
+    // borderWidth: 1,
+    // borderColor: "red",
     // padding: 12,
   },
   HeaderText: {
     fontSize: 22,
     fontWeight: "bold",
-    marginBottom: 30,
+    marginBottom: 15,
+    // borderWidth: 1,
+    // borderColor: "green",
+    paddingHorizontal: 12,
+    marginTop: 20,
   },
   contentContainer: {
     alignItems: "center",
