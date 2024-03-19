@@ -22,7 +22,7 @@ const Home = () => {
           <RoomCard />
           {/* <View style={{ flex: 1 }}><RoomSlider /></View> */}
           {/* <SliderComponent /> */}
-          <Text>Hello</Text>
+          <Text>Hello1234</Text>
           <Text>Hello</Text>
           <Text>Hello</Text>
           <Text>Hello</Text>
