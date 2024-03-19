@@ -110,6 +110,10 @@ const styles = StyleSheet.create({
     borderColor: "yellow",
     width: "30%",
   },
+  price: {
+    fontSize: 22,
+    fontWeight: "bold",
+  },
   rightContainer: {
     borderWidth: 1,
     borderColor: "green",
