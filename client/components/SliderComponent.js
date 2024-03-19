@@ -128,23 +128,30 @@ const styles = StyleSheet.create({
   },
   propertySpecs: {
     flexDirection: "row",
-    justifyContent: "space-around",
+    // justifyContent: "space-around",
     alignItems: "center",
   },
   iconContainer: {
     alignItems: "center",
-    justifyContent: "space-between",
+    // justifyContent: "space-between",
+    // justifyContent: "flex-start",
     // borderWidth: 1,
     // borderColor: "red",
-    width: "25%",
+    // width: "25%",
+    flexDirection: "row",
   },
   iconContainerBorder: {
     borderRightWidth: 1,
     borderRightColor: "gray", // Or any color you want for the border
+    // marginLeft: 5,
+    marginRight: 10,
+    fontWeight: 100,
   },
   label: {
     fontSize: 12,
-    marginTop: 4,
+    // marginTop: 4,
+    marginLeft: 5,
+    marginRight: 10,
   },
   detailContainer: {
     borderWidth: 1,
