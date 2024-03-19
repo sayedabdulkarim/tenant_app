@@ -25,7 +25,7 @@ const PromotionSlider = () => {
         {/* <Text style={styles.text}>Slide 1 Content</Text> */}
         <Image
           source={{
-            uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLCIvyusG0J6aJBOGizPc9E9FSiNEJ_5GZFjMeH81okdmIevDgsqRBDrs0Ru-o0kGXJaQ",
+            uri: "https://speedhome.com/img/slider/TT_Depo_Banner_Homepage_Desktop.png",
           }}
           style={styles.slideImage}
         />
@@ -66,21 +66,25 @@ export default PromotionSlider;
 
 const styles = StyleSheet.create({
   container: {
-    height: 200, // Set the height of the slider
+    paddingHorizontal: 12,
+    // height: 200, // Set the height of the slider
   },
   slide: {
     width: width - 50, // Width of the slide minus margin
+    height: 150,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "green", // Background color for your slide
-    margin: 10, // Add margin if you want space between the slides
-    borderWidth: 1,
-    borderColor: "red",
+    //backgroundColor: "green", // Background color for your slide
+    marginRight: 10, // Add margin if you want space between the slides
+    //borderWidth: 1,
+    //borderColor: "red",
+    borderRadius: 10,
+    overflow: "hidden",
   },
   slideImage: {
     // width: width - 40, // Full width of the slide minus margin on both sides
     width: "100%", // Full width of the slide minus margin on both sides
-    height: 150, // Adjust the height as needed
+    height: "100%", // Adjust the height as needed
     resizeMode: "cover", // Cover the entire area of the slide
   },
   text: {

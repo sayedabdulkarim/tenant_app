@@ -26,7 +26,7 @@ const Index = () => {
       <StatusBar backgroundColor="#FFE119" barStyle="dark-content" />
       <NavigationContainer>
         <Stack.Navigator
-          initialRouteName={"login"}
+          initialRouteName={"home"}
           screenOptions={({}) => ({
             headerShown: false,
           })}

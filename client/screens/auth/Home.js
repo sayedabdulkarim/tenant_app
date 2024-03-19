@@ -5,16 +5,23 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import Footer from "../../components/Footer";
 import SliderComponent from "../../components/SliderComponent";
 import PromotionSlider from "../../components/PromotionSlider";
+import RoomCard from "../../components/RoomCard";
+import RoomSlider from "../../components/RoomSlider";
 
 const Home = () => {
   return (
-    <>
+    <View style={styles.container}>
       <StatusBar barStyle="light-content" backgroundColor="#bebebe" />
       <SafeAreaView style={styles.safeArea}>
         <SearchComponent />
         <ScrollView showsVerticalScrollIndicator={false}>
+          {/* top slider */}
           <PromotionSlider />
-          <SliderComponent />
+
+          {/* room component */}
+          <RoomCard />
+          {/* <View style={{ flex: 1 }}><RoomSlider /></View> */}
+          {/* <SliderComponent /> */}
           <Text>Hello</Text>
           <Text>Hello</Text>
           <Text>Hello</Text>
@@ -29,7 +36,7 @@ const Home = () => {
         </ScrollView>
       </SafeAreaView>
       <Footer />
-    </>
+    </View>
   );
 };
 
@@ -39,8 +46,13 @@ const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
     backgroundColor: "#fff",
-    // borderWidth: 1,
-    // borderColor: "red",
     paddingTop: 10,
+  },
+  container: {
+    flex: 1,
+    borderWidth: 1,
+    borderColor: "red",
+    //paddingLeft: 12,
+    backgroundColor: "#fff",
   },
 });
