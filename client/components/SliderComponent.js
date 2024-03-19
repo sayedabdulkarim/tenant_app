@@ -70,7 +70,9 @@ const SliderComponent = ({ belowText }) => {
             <Text style={styles.price}>RM 1,400</Text>
           </View>
           <View style={styles.rightContainer}>
-            <Text style={styles.deposit}>ZERO DEPOSIT</Text>
+            <Text style={styles.deposit}>
+              <Text style={styles.yellow}>ZERO</Text> DEPOSIT
+            </Text>
             <Text style={styles.unit}>WHOLE UNIT</Text>
           </View>
         </View>
@@ -131,6 +133,10 @@ const styles = StyleSheet.create({
     color: "#fff",
     overflow: "hidden",
     letterSpacing: 0.6,
+  },
+  yellow: {
+    color: "#FFE119",
+    fontWeight: "bold",
   },
   unit: {
     borderWidth: 1,
