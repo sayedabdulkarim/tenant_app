@@ -5,9 +5,13 @@ import { MaterialIcons, FontAwesome } from "@expo/vector-icons"; // Import Mater
 
 const { width: screenWidth } = Dimensions.get("window");
 
-const IconWithLabel = ({ iconName, label, color }) => (
+const IconWithLabel = ({ iconName, label, color, iconType }) => (
   <View style={styles.iconContainer}>
-    <MaterialIcons name={iconName} size={24} color={color} />
+    {iconType === "fontawesome" ? (
+      <FontAwesome name={iconName} size={24} color="black" />
+    ) : (
+      <MaterialIcons name={iconName} size={24} color={color} />
+    )}
     <Text style={[styles.label, { color }]}>{label}</Text>
   </View>
 );
@@ -88,9 +92,14 @@ const SliderComponent = ({ belowText }) => {
         <Text style={styles.addressText}>Bandar Bukit Puchong</Text>
         <View style={styles.propertySpecs}>
           <IconWithLabel iconName="business" label="High-Rise" color="gray" />
-          {/* <IconWithLabel iconName="local-parking" label="0" color="gray" /> */}
-          <FontAwesome name="bed" size={24} color="black" />
-          <IconWithLabel iconName="elevator" label="1" color="gray" />
+          <IconWithLabel
+            iconName="bed"
+            label={"3"}
+            size={24}
+            color="black"
+            iconType="fontawesome"
+          />
+          <IconWithLabel iconName="bathtub" label="1" color="gray" />
           <IconWithLabel iconName="directions-car" label="0" color="gray" />
         </View>
       </View>
