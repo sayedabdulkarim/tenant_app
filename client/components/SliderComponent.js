@@ -128,10 +128,13 @@ const styles = StyleSheet.create({
   },
   iconContainer: {
     alignItems: "center",
-    justifyContent: "center",
+    justifyContent: "space-between",
+    borderWidth: 1,
+    borderColor: "red",
+    width: "25%",
   },
   label: {
-    fontSize: 16,
+    fontSize: 12,
     marginTop: 4,
   },
   detailContainer: {
