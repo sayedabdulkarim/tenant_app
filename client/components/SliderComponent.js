@@ -86,6 +86,8 @@ const styles = StyleSheet.create({
     paddingTop: 10,
     paddingBottom: 15,
     paddingHorizontal: 5,
+    borderBottomRightRadius: 10,
+    borderBottomLeftRadius: 10,
   },
   wrapper: {
     height: 250,
@@ -93,7 +95,9 @@ const styles = StyleSheet.create({
     overflow: "hidden",
   },
   slide: {
-    borderRadius: 10,
+    // borderRadius: 10,
+    borderTopLeftRadius: 10,
+    borderTopRightRadius: 10,
     overflow: "hidden",
     flex: 1,
     flexDirection: "row",
