@@ -244,11 +244,15 @@ const styles = StyleSheet.create({
     width: "100%",
     height: 250,
     resizeMode: "cover",
+    borderRightWidth: 2,
+    borderColor: "#fff",
   },
   halfImage: {
     width: "100%",
     height: "50%",
     resizeMode: "cover",
+    borderBottomWidth: 2,
+    borderColor: "#fff",
   },
   quarterImage: {
     width: "50%",
