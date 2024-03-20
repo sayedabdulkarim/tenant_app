@@ -22,13 +22,11 @@ const RoomCard = ({ setParentSwipeEnabled }) => {
         style={styles.scroll}
         contentContainerStyle={styles.contentContainer}
       >
-        <TouchableOpacity onPress={() => console.log(" clicked")}>
-          <SliderComponent
-            setParentSwipeEnabled={setParentSwipeEnabled}
-            style={{ width: screenWidth }}
-            belowText={"One"}
-          />
-        </TouchableOpacity>
+        <SliderComponent
+          setParentSwipeEnabled={setParentSwipeEnabled}
+          style={{ width: screenWidth }}
+          belowText={"One"}
+        />
         <SliderComponent
           setParentSwipeEnabled={setParentSwipeEnabled}
           style={{ width: screenWidth }}
