@@ -162,6 +162,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: 800,
     marginVertical: 20,
+    fontWeight: "600",
   },
   propertySpecs: {
     flexDirection: "row",
