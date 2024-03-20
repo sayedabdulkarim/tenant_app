@@ -1,7 +1,15 @@
 import React from "react";
-import { StyleSheet, Text, View, Image, Dimensions } from "react-native";
+import { useNavigation } from "@react-navigation/native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  Dimensions,
+  TouchableOpacity,
+} from "react-native";
 import Swiper from "react-native-swiper";
-import { MaterialIcons, FontAwesome, FontAwesome5 } from "@expo/vector-icons"; // Import MaterialIcons from Expo
+import { MaterialIcons, FontAwesome, FontAwesome5 } from "@expo/vector-icons";
 
 const { width: screenWidth } = Dimensions.get("window");
 
@@ -17,6 +25,13 @@ const IconWithLabel = ({ iconName, label, color, iconType, isLast }) => (
 );
 
 const SliderComponent = ({ belowText }) => {
+  //misc
+  const navigation = useNavigation();
+  //func
+  const handlePress = () => {
+    navigation.navigate("roomdetails");
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.sliderContainer}>
@@ -90,7 +105,10 @@ const SliderComponent = ({ belowText }) => {
         </View>
       </View>
 
-      <View style={styles.detailContainer}>
+      <TouchableOpacity
+        style={styles.detailContainer}
+        onPress={() => handlePress()}
+      >
         <View style={styles.priceContainer}>
           <View style={styles.leftContainer}>
             <Text style={styles.price}>RM 1,400</Text>
@@ -120,7 +138,7 @@ const SliderComponent = ({ belowText }) => {
             isLast
           />
         </View>
-      </View>
+      </TouchableOpacity>
     </View>
   );
 };
