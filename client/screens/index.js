@@ -18,7 +18,8 @@ import AuthLanding from "./unauth/AuthLanding";
 import Login from "../screens/unauth/Login";
 
 //auth
-import HomeScreen from "../screens/auth/Home";
+import HomeScreen from "./auth/Home";
+import RoomDetails from "./auth/RoomDetails";
 
 const Index = () => {
   return (
@@ -26,7 +27,7 @@ const Index = () => {
       <StatusBar backgroundColor="#FFE119" barStyle="dark-content" />
       <NavigationContainer>
         <Stack.Navigator
-          initialRouteName={"home"}
+          initialRouteName={"roomdetails"}
           screenOptions={({}) => ({
             headerShown: false,
           })}
@@ -38,6 +39,7 @@ const Index = () => {
 
             {/* auth */}
             <Stack.Screen name="home" component={HomeScreen} />
+            <Stack.Screen name="roomdetails" component={RoomDetails} />
           </Stack.Group>
         </Stack.Navigator>
       </NavigationContainer>

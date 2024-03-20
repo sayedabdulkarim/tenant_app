@@ -1,5 +1,12 @@
 import React from "react";
-import { ScrollView, StyleSheet, Text, View, Dimensions } from "react-native";
+import {
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+  Dimensions,
+  TouchableOpacity,
+} from "react-native";
 import SliderComponent from "./SliderComponent";
 
 // Get the screen width
@@ -15,11 +22,13 @@ const RoomCard = ({ setParentSwipeEnabled }) => {
         style={styles.scroll}
         contentContainerStyle={styles.contentContainer}
       >
-        <SliderComponent
-          setParentSwipeEnabled={setParentSwipeEnabled}
-          style={{ width: screenWidth }}
-          belowText={"One"}
-        />
+        <TouchableOpacity onPress={() => console.log(" clicked")}>
+          <SliderComponent
+            setParentSwipeEnabled={setParentSwipeEnabled}
+            style={{ width: screenWidth }}
+            belowText={"One"}
+          />
+        </TouchableOpacity>
         <SliderComponent
           setParentSwipeEnabled={setParentSwipeEnabled}
           style={{ width: screenWidth }}
