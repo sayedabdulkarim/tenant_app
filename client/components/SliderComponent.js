@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, View, Image, Dimensions } from "react-native";
 import Swiper from "react-native-swiper";
-import { MaterialIcons, FontAwesome } from "@expo/vector-icons"; // Import MaterialIcons from Expo
+import { MaterialIcons, FontAwesome, FontAwesome5 } from "@expo/vector-icons"; // Import MaterialIcons from Expo
 
 const { width: screenWidth } = Dimensions.get("window");
 
@@ -19,64 +19,76 @@ const IconWithLabel = ({ iconName, label, color, iconType, isLast }) => (
 const SliderComponent = ({ belowText }) => {
   return (
     <View style={styles.container}>
-      <Swiper
-        style={styles.wrapper}
-        showsButtons={false}
-        activeDotColor="yellow"
-        dotStyle={styles.dotStyle}
-        activeDotStyle={styles.activeDotStyle}
-      >
-        <View style={styles.slide}>
-          <View style={styles.leftColumn}>
-            <Image
-              style={styles.fullImage}
-              source={{
-                uri: "https://image.speedhome.com/speedrent-backend/images/property/ZBVUNVIP/6PFHUMHQJNLAUYMW-small.jpg",
-              }}
-            />
-          </View>
-          <View style={styles.rightColumn}>
-            <Image
-              style={styles.halfImage}
-              source={{
-                uri: "https://image.speedhome.com/speedrent-backend/images/property/ZBVUNVIP/6PFHUMHQJNLAUYMW-small.jpg",
-              }}
-            />
-            <View
-              style={{
-                // borderWidth: 2,
-                // borderColor: "blue",
-                height: "50%",
-                flexDirection: "row",
-              }}
-            >
+      <View style={styles.sliderContainer}>
+        <Swiper
+          style={styles.wrapper}
+          showsButtons={false}
+          activeDotColor="yellow"
+          dotStyle={styles.dotStyle}
+          activeDotStyle={styles.activeDotStyle}
+        >
+          <View style={styles.slide}>
+            <View style={styles.leftColumn}>
               <Image
-                style={styles.quarterImage}
+                style={styles.fullImage}
                 source={{
                   uri: "https://image.speedhome.com/speedrent-backend/images/property/ZBVUNVIP/6PFHUMHQJNLAUYMW-small.jpg",
                 }}
               />
+            </View>
+            <View style={styles.rightColumn}>
               <Image
-                style={styles.quarterImage}
+                style={styles.halfImage}
                 source={{
-                  uri: "https://image.speedhome.com/speedrent-backend/images/property/ZBVUNVIP/QIXASB0BQTAXELXP-small.jpg",
+                  uri: "https://image.speedhome.com/speedrent-backend/images/property/ZBVUNVIP/6PFHUMHQJNLAUYMW-small.jpg",
                 }}
               />
+              <View
+                style={{
+                  // borderWidth: 2,
+                  // borderColor: "blue",
+                  height: "50%",
+                  flexDirection: "row",
+                }}
+              >
+                <Image
+                  style={styles.quarterImage}
+                  source={{
+                    uri: "https://image.speedhome.com/speedrent-backend/images/property/ZBVUNVIP/6PFHUMHQJNLAUYMW-small.jpg",
+                  }}
+                />
+                <Image
+                  style={styles.quarterImage}
+                  source={{
+                    uri: "https://image.speedhome.com/speedrent-backend/images/property/ZBVUNVIP/QIXASB0BQTAXELXP-small.jpg",
+                  }}
+                />
+              </View>
             </View>
           </View>
-        </View>
-        <View style={styles.slide}>
-          <Image
-            style={styles.image}
-            source={{
-              uri: "https://image.speedhome.com/speedrent-backend/images/property/ZBVUNVIP/QIXASB0BQTAXELXP-small.jpg",
-            }}
+          <View style={styles.slide}>
+            <Image
+              style={styles.image}
+              source={{
+                uri: "https://image.speedhome.com/speedrent-backend/images/property/ZBVUNVIP/QIXASB0BQTAXELXP-small.jpg",
+              }}
+            />
+          </View>
+          <View style={styles.slide}>
+            <Text style={styles.text}>And simple</Text>
+          </View>
+        </Swiper>
+        <View style={styles.currentImageCountContainer}>
+          <FontAwesome5
+            name="image"
+            size={24}
+            color="white"
+            style={styles.countIcon}
           />
+          <Text style={styles.currentCount}>10</Text>
         </View>
-        <View style={styles.slide}>
-          <Text style={styles.text}>And simple</Text>
-        </View>
-      </Swiper>
+      </View>
+
       <View style={styles.detailContainer}>
         <View style={styles.priceContainer}>
           <View style={styles.leftContainer}>
@@ -115,6 +127,31 @@ const SliderComponent = ({ belowText }) => {
 export default SliderComponent;
 
 const styles = StyleSheet.create({
+  sliderContainer: {
+    position: "relative",
+  },
+  currentImageCountContainer: {
+    position: "absolute",
+    bottom: 10,
+    left: 10,
+    // borderWidth: 1,
+    // borderColor: "red",
+    backgroundColor: "#000",
+    opacity: 0.6,
+    paddingVertical: 5,
+    paddingHorizontal: 10,
+    borderRadius: 10,
+    flexDirection: "row",
+  },
+  currentCount: {
+    color: "#fff",
+    fontSize: 18,
+    fontWeight: "bold",
+  },
+  countIcon: {
+    marginRight: 15,
+  },
+  //
   container: {
     //borderWidth: 1,
     //borderColor: "red",
