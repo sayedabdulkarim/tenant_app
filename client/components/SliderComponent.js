@@ -26,6 +26,7 @@ const SliderComponent = ({ belowText }) => {
           activeDotColor="yellow"
           dotStyle={styles.dotStyle}
           activeDotStyle={styles.activeDotStyle}
+          onIndexChanged={(i) => console.log({ i })}
         >
           <View style={styles.slide}>
             <View style={styles.leftColumn}>
