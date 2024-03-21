@@ -5,6 +5,9 @@ import {
   StyleSheet,
   Text,
   View,
+  TouchableOpacity,
+  Linking,
+  Platform,
 } from "react-native";
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -16,6 +19,18 @@ import { FontAwesome5, MaterialCommunityIcons } from "@expo/vector-icons";
 const { width: screenWidth } = Dimensions.get("window");
 
 const RoomDetails = ({ navigation }) => {
+  //func
+  const openMaps = (latitude, longitude) => {
+    const url = Platform.select({
+      ios: `maps:${latitude},${longitude}`,
+      android: `geo:${latitude},${longitude}`,
+    });
+
+    Linking.openURL(url).catch((err) =>
+      console.error("An error occurred", err)
+    );
+  };
+
   return (
     <View style={styles.container}>
       <StatusBar barStyle="light-content" backgroundColor="#bebebe" />
@@ -49,12 +64,16 @@ const RoomDetails = ({ navigation }) => {
                 >
                   The Quartz WM, Jalan 34/ 26, Wangsa Maju
                 </Text>
-                <MaterialCommunityIcons
-                  name="map-marker-radius-outline"
-                  size={24}
-                  color="black"
-                  style={styles.locationAddressIcon}
-                />
+                <TouchableOpacity
+                  onPress={() => openMaps("21.468021", "83.995393")}
+                >
+                  <MaterialCommunityIcons
+                    name="map-marker-radius-outline"
+                    size={24}
+                    color="black"
+                    style={styles.locationAddressIcon}
+                  />
+                </TouchableOpacity>
               </View>
             </View>
           </View>
