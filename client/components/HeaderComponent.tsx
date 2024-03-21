@@ -8,12 +8,18 @@ import {
 } from "react-native";
 import { Avatar } from "react-native-paper";
 import { Entypo, Ionicons } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
 
 const HeaderComponent = () => {
+  const navigation = useNavigation();
+
   return (
     <View style={styles.container}>
       <View style={styles.leftSection}>
-        <TouchableOpacity style={styles.iconContainer}>
+        <TouchableOpacity
+          style={styles.iconContainer}
+          onPress={() => navigation.goBack()}
+        >
           <Ionicons
             name="arrow-back-sharp"
             size={24}
