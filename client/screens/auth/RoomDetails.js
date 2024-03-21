@@ -13,12 +13,27 @@ import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import HeaderComponent from "../../components/HeaderComponent";
 import SliderComponent from "../../components/SliderComponent";
-import { FontAwesome5, MaterialCommunityIcons } from "@expo/vector-icons";
-
+import {
+  FontAwesome,
+  MaterialCommunityIcons,
+  MaterialIcons,
+} from "@expo/vector-icons";
 // Get the screen width
 const { width: screenWidth } = Dimensions.get("window");
 
 const RoomDetails = ({ navigation }) => {
+  //misc
+  const IconWithLabel = ({ iconName, label, color, iconType, isLast }) => (
+    <View style={styles.iconContainer}>
+      {iconType === "fontawesome" ? (
+        <FontAwesome name={iconName} size={24} color="black" />
+      ) : (
+        <MaterialIcons name={iconName} size={24} color={color} />
+      )}
+      <Text style={[styles.IconLabelText, { color }]}>{label}</Text>
+    </View>
+  );
+
   //func
   const openMaps = (latitude, longitude) => {
     const url = Platform.select({
@@ -76,6 +91,54 @@ const RoomDetails = ({ navigation }) => {
                 </TouchableOpacity>
               </View>
             </View>
+            {/* property features */}
+            <View style={styles.propertyFeaturesContainer}>
+              {/* first row */}
+              <View style={styles.featureRow}>
+                <IconWithLabel
+                  iconName="business"
+                  label="High-Rise"
+                  color="black"
+                />
+                <IconWithLabel
+                  iconName="bed"
+                  label={"3"}
+                  size={24}
+                  color="black"
+                  iconType="fontawesome"
+                />
+              </View>
+              {/* second row */}
+              <View style={styles.featureRow}>
+                <IconWithLabel
+                  iconName="business"
+                  label="High-Rise"
+                  color="black"
+                />
+                <IconWithLabel
+                  iconName="bed"
+                  label={"3"}
+                  size={24}
+                  color="black"
+                  iconType="fontawesome"
+                />
+              </View>
+              {/* third row */}
+              <View style={styles.featureRow}>
+                <IconWithLabel
+                  iconName="business"
+                  label="High-Rise"
+                  color="black"
+                />
+                <IconWithLabel
+                  iconName="bed"
+                  label={"3"}
+                  size={24}
+                  color="black"
+                  iconType="fontawesome"
+                />
+              </View>
+            </View>
           </View>
         </ScrollView>
       </SafeAreaView>
@@ -98,6 +161,25 @@ const styles = StyleSheet.create({
     //paddingLeft: 12,
     backgroundColor: "#fff",
     position: "relative",
+  },
+  //
+  propertyFeaturesContainer: {
+    marginTop: 5,
+  },
+  featureRow: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+  },
+  iconContainer: {
+    width: "50%",
+    flexDirection: "row",
+    alignItems: "center",
+    marginTop: 5,
+    // borderWidth: 1,
+    // borderColor: "red",
+  },
+  IconLabelText: {
+    marginLeft: 10,
   },
   //
   locationDetailsContainer: {
