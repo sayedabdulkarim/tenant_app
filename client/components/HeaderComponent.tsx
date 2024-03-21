@@ -32,7 +32,7 @@ const HeaderComponent = () => {
           />
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.iconContainer}>
+        <TouchableOpacity style={[styles.iconContainer, { marginLeft: 10 }]}>
           <Entypo
             name="share"
             size={24}
@@ -49,8 +49,8 @@ export default HeaderComponent;
 
 const styles = StyleSheet.create({
   container: {
-    borderWidth: 1,
-    borderColor: "red",
+    // borderWidth: 1,
+    // borderColor: "red",
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
