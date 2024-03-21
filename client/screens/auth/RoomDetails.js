@@ -17,6 +17,7 @@ import {
   FontAwesome,
   MaterialCommunityIcons,
   MaterialIcons,
+  Ionicons,
 } from "@expo/vector-icons";
 // Get the screen width
 const { width: screenWidth } = Dimensions.get("window");
@@ -27,6 +28,10 @@ const RoomDetails = ({ navigation }) => {
     <View style={styles.iconContainer}>
       {iconType === "fontawesome" ? (
         <FontAwesome name={iconName} size={24} color="black" />
+      ) : iconType === "ionicons" ? (
+        <Ionicons name={iconName} size={24} color={color} />
+      ) : iconType === "matcom" ? (
+        <MaterialCommunityIcons name={iconName} size={24} color={color} />
       ) : (
         <MaterialIcons name={iconName} size={24} color={color} />
       )}
@@ -101,27 +106,22 @@ const RoomDetails = ({ navigation }) => {
                   color="black"
                 />
                 <IconWithLabel
-                  iconName="bed"
+                  iconName="bed-outline"
                   label={"3"}
                   size={24}
                   color="black"
-                  iconType="fontawesome"
+                  iconType="ionicons"
                 />
               </View>
               {/* second row */}
               <View style={styles.featureRow}>
                 <IconWithLabel
-                  iconName="business"
-                  label="High-Rise"
+                  iconName="sofa-single-outline"
+                  label="Fully Furnished"
                   color="black"
+                  iconType={"matcom"}
                 />
-                <IconWithLabel
-                  iconName="bed"
-                  label={"3"}
-                  size={24}
-                  color="black"
-                  iconType="fontawesome"
-                />
+                <IconWithLabel iconName="bathtub" label="1" color="black" />
               </View>
               {/* third row */}
               <View style={styles.featureRow}>
@@ -169,6 +169,7 @@ const styles = StyleSheet.create({
   featureRow: {
     flexDirection: "row",
     justifyContent: "space-between",
+    marginTop: 8,
   },
   iconContainer: {
     width: "50%",
