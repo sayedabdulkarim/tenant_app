@@ -1,5 +1,11 @@
 import React from "react";
-import { View, TextInput, StyleSheet, TouchableOpacity } from "react-native";
+import {
+  View,
+  TextInput,
+  StyleSheet,
+  TouchableOpacity,
+  Text,
+} from "react-native";
 import { Avatar } from "react-native-paper";
 import { Entypo, Ionicons } from "@expo/vector-icons";
 
@@ -7,21 +13,26 @@ const HeaderComponent = () => {
   return (
     <View style={styles.container}>
       <View style={styles.leftSection}>
-        <Ionicons
-          name="arrow-back-sharp"
-          size={24}
-          color="black"
-          style={styles.backIcon}
-        />
+        <TouchableOpacity style={styles.iconContainer}>
+          <Ionicons
+            name="arrow-back-sharp"
+            size={24}
+            color="black"
+            style={styles.backIcon}
+          />
+        </TouchableOpacity>
       </View>
       <View style={styles.rightSection}>
-        <TouchableOpacity style={styles.favoriteIconContainer}>
+        <TouchableOpacity style={styles.iconContainer}>
           <Avatar.Icon
             icon="heart-outline"
             size={40}
             color="#000"
             style={styles.searchIcon}
           />
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.iconContainer}>
           <Entypo
             name="share"
             size={24}
@@ -37,15 +48,18 @@ const HeaderComponent = () => {
 export default HeaderComponent;
 
 const styles = StyleSheet.create({
-  container: {},
+  container: {
+    borderWidth: 1,
+    borderColor: "red",
+  },
   leftSection: {},
   rightSection: {},
-  favoriteIconContainer: {},
+  iconContainer: {},
   backIcon: {},
   searchIcon: {
-    backgroundColor: "transparent",
+    backgroundColor: "#eee",
   },
   shareIcon: {
-    backgroundColor: "transparent",
+    backgroundColor: "#eee",
   },
 });

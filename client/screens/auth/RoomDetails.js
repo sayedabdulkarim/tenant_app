@@ -1,6 +1,7 @@
 import { StatusBar, StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
+import HeaderComponent from "../../components/HeaderComponent";
 
 const RoomDetails = ({ navigation }) => {
   const goBack = () => {
@@ -11,6 +12,7 @@ const RoomDetails = ({ navigation }) => {
     <View style={styles.container}>
       <StatusBar barStyle="light-content" backgroundColor="#bebebe" />
       <SafeAreaView style={styles.safeArea}>
+        <HeaderComponent />
         <Text>RoomDetails</Text>
         <Text>RoomDetails</Text>
         <Text>RoomDetails</Text>
