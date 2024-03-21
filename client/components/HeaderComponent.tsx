@@ -49,8 +49,8 @@ export default HeaderComponent;
 
 const styles = StyleSheet.create({
   container: {
-    borderWidth: 1,
-    borderColor: "red",
+    // borderWidth: 1,
+    // borderColor: "red",
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
