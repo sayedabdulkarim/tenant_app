@@ -10,17 +10,18 @@ const RoomDetails = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <StatusBar barStyle="light-content" backgroundColor="#bebebe" />
-      <SafeAreaView style={styles.safeArea}></SafeAreaView>
-      <Text>RoomDetails</Text>
-      <Text>RoomDetails</Text>
-      <Text>RoomDetails</Text>
-      <Text>RoomDetails</Text>
-      <Text>RoomDetails</Text>
-      <Text>RoomDetails</Text>
-      <Text>RoomDetails</Text>
-      <Text>RoomDetails</Text>
-      <Text>RoomDetails</Text>
-      <Text onPress={() => goBack()}>GO BACK</Text>
+      <SafeAreaView style={styles.safeArea}>
+        <Text>RoomDetails</Text>
+        <Text>RoomDetails</Text>
+        <Text>RoomDetails</Text>
+        <Text>RoomDetails</Text>
+        <Text>RoomDetails</Text>
+        <Text>RoomDetails</Text>
+        <Text>RoomDetails</Text>
+        <Text>RoomDetails</Text>
+        <Text>RoomDetails</Text>
+        <Text onPress={() => goBack()}>GO BACK</Text>
+      </SafeAreaView>
     </View>
   );
 };
