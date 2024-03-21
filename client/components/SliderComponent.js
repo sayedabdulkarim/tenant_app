@@ -24,7 +24,7 @@ const IconWithLabel = ({ iconName, label, color, iconType, isLast }) => (
   </View>
 );
 
-const SliderComponent = ({ belowText }) => {
+const SliderComponent = ({ belowText, isShowDetails }) => {
   //misc
   const navigation = useNavigation();
   //func
@@ -105,40 +105,42 @@ const SliderComponent = ({ belowText }) => {
         </View>
       </View>
 
-      <TouchableOpacity
-        style={styles.detailContainer}
-        onPress={() => handlePress()}
-      >
-        <View style={styles.priceContainer}>
-          <View style={styles.leftContainer}>
-            <Text style={styles.price}>RM 1,400</Text>
+      {isShowDetails && (
+        <TouchableOpacity
+          style={styles.detailContainer}
+          onPress={() => handlePress()}
+        >
+          <View style={styles.priceContainer}>
+            <View style={styles.leftContainer}>
+              <Text style={styles.price}>RM 1,400</Text>
+            </View>
+            <View style={styles.rightContainer}>
+              <Text style={styles.deposit}>
+                <Text style={styles.yellow}>ZERO</Text> DEPOSIT
+              </Text>
+              <Text style={styles.unit}>WHOLE UNIT</Text>
+            </View>
           </View>
-          <View style={styles.rightContainer}>
-            <Text style={styles.deposit}>
-              <Text style={styles.yellow}>ZERO</Text> DEPOSIT
-            </Text>
-            <Text style={styles.unit}>WHOLE UNIT</Text>
+          <Text style={styles.addressText}>Bandar Bukit Puchong</Text>
+          <View style={styles.propertySpecs}>
+            <IconWithLabel iconName="business" label="High-Rise" color="gray" />
+            <IconWithLabel
+              iconName="bed"
+              label={"3"}
+              size={24}
+              color="black"
+              iconType="fontawesome"
+            />
+            <IconWithLabel iconName="bathtub" label="1" color="gray" />
+            <IconWithLabel
+              iconName="directions-car"
+              label="0"
+              color="gray"
+              isLast
+            />
           </View>
-        </View>
-        <Text style={styles.addressText}>Bandar Bukit Puchong</Text>
-        <View style={styles.propertySpecs}>
-          <IconWithLabel iconName="business" label="High-Rise" color="gray" />
-          <IconWithLabel
-            iconName="bed"
-            label={"3"}
-            size={24}
-            color="black"
-            iconType="fontawesome"
-          />
-          <IconWithLabel iconName="bathtub" label="1" color="gray" />
-          <IconWithLabel
-            iconName="directions-car"
-            label="0"
-            color="gray"
-            isLast
-          />
-        </View>
-      </TouchableOpacity>
+        </TouchableOpacity>
+      )}
     </View>
   );
 };

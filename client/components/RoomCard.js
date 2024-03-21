@@ -26,11 +26,13 @@ const RoomCard = ({ setParentSwipeEnabled }) => {
           setParentSwipeEnabled={setParentSwipeEnabled}
           style={{ width: screenWidth }}
           belowText={"One"}
+          isShowDetails={true}
         />
         <SliderComponent
           setParentSwipeEnabled={setParentSwipeEnabled}
           style={{ width: screenWidth }}
           belowText={"Two"}
+          isShowDetails={true}
         />
       </ScrollView>
     </View>
