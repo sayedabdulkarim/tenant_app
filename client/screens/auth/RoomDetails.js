@@ -1,4 +1,4 @@
-import { StatusBar, StyleSheet, Text, View } from "react-native";
+import { ScrollView, StatusBar, StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import HeaderComponent from "../../components/HeaderComponent";
@@ -13,16 +13,63 @@ const RoomDetails = ({ navigation }) => {
       <StatusBar barStyle="light-content" backgroundColor="#bebebe" />
       <SafeAreaView style={styles.safeArea}>
         <HeaderComponent />
-        <Text>RoomDetails</Text>
-        <Text>RoomDetails</Text>
-        <Text>RoomDetails</Text>
-        <Text>RoomDetails</Text>
-        <Text>RoomDetails</Text>
-        <Text>RoomDetails</Text>
-        <Text>RoomDetails</Text>
-        <Text>RoomDetails</Text>
-        <Text>RoomDetails</Text>
-        <Text onPress={() => goBack()}>GO BACK</Text>
+        <ScrollView>
+          <Text>RoomDetails</Text>
+          <Text>RoomDetails</Text>
+          <Text>RoomDetails</Text>
+          <Text>RoomDetails</Text>
+          <Text>RoomDetails</Text>
+          <Text>RoomDetails</Text>
+          <Text>RoomDetails</Text>
+          <Text>RoomDetails</Text>
+          <Text>RoomDetails</Text>
+          <Text>RoomDetails</Text>
+          <Text>RoomDetails</Text>
+          <Text>RoomDetails</Text>
+          <Text>RoomDetails</Text>
+          <Text>RoomDetails</Text>
+          <Text>RoomDetails</Text>
+          <Text>RoomDetails</Text>
+          <Text>RoomDetails</Text>
+          <Text>RoomDetails</Text>
+          <Text>RoomDetails</Text>
+          <Text>RoomDetails</Text>
+          <Text>RoomDetails</Text>
+          <Text>RoomDetails</Text>
+          <Text>RoomDetails</Text>
+          <Text>RoomDetails</Text>
+          <Text>RoomDetails</Text>
+          <Text>RoomDetails</Text>
+          <Text>RoomDetails</Text>
+          <Text>RoomDetails</Text>
+          <Text>RoomDetails</Text>
+          <Text>RoomDetails</Text>
+          <Text>RoomDetails</Text>
+          <Text>RoomDetails</Text>
+          <Text>RoomDetails</Text>
+          <Text>RoomDetails</Text>
+          <Text>RoomDetails</Text>
+          <Text>RoomDetails</Text>
+          <Text>RoomDetails</Text>
+          <Text>RoomDetails</Text>
+          <Text>RoomDetails</Text>
+          <Text>RoomDetails</Text>
+          <Text>RoomDetails</Text>
+          <Text>RoomDetails</Text>
+          <Text>RoomDetails</Text>
+          <Text>RoomDetails</Text>
+          <Text>RoomDetails</Text>
+          <Text>RoomDetails</Text>
+          <Text>RoomDetails</Text>
+          <Text>RoomDetails</Text>
+          <Text>RoomDetails</Text>
+          <Text>RoomDetails</Text>
+          <Text>RoomDetails</Text>
+          <Text>RoomDetails</Text>
+          <Text>RoomDetails</Text>
+          <Text>RoomDetails</Text>
+          <Text onPress={() => goBack()}>GO BACK</Text>
+        </ScrollView>
       </SafeAreaView>
     </View>
   );
@@ -38,9 +85,10 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    borderWidth: 1,
-    borderColor: "red",
+    borderWidth: 5,
+    borderColor: "green",
     //paddingLeft: 12,
     backgroundColor: "#fff",
+    position: "relative",
   },
 });

@@ -49,12 +49,17 @@ export default HeaderComponent;
 
 const styles = StyleSheet.create({
   container: {
-    // borderWidth: 1,
-    // borderColor: "red",
+    borderWidth: 1,
+    borderColor: "red",
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
     paddingHorizontal: 12,
+    position: "absolute",
+    top: 50,
+    left: 0,
+    width: "100%",
+    zIndex: 1,
   },
   leftSection: {},
   rightSection: {
