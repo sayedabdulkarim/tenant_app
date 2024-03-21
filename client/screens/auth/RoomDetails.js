@@ -10,6 +10,7 @@ import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import HeaderComponent from "../../components/HeaderComponent";
 import SliderComponent from "../../components/SliderComponent";
+import { FontAwesome5, MaterialCommunityIcons } from "@expo/vector-icons";
 
 // Get the screen width
 const { width: screenWidth } = Dimensions.get("window");
@@ -35,7 +36,27 @@ const RoomDetails = ({ navigation }) => {
                 <Text style={styles.unit}>WHOLE UNIT</Text>
               </View>
             </View>
-            {/*  */}
+            {/* location details */}
+            <View style={styles.locationDetailsContainer}>
+              <Text style={styles.propertyName}>
+                Henna Residence, Wangsa Maju
+              </Text>
+              <View style={styles.locationAddressContainer}>
+                <Text
+                  style={styles.locationAddressText}
+                  numberOfLines={1}
+                  ellipsizeMode="tail"
+                >
+                  The Quartz WM, Jalan 34/ 26, Wangsa Maju
+                </Text>
+                <MaterialCommunityIcons
+                  name="map-marker-radius-outline"
+                  size={24}
+                  color="black"
+                  style={styles.locationAddressIcon}
+                />
+              </View>
+            </View>
           </View>
         </ScrollView>
       </SafeAreaView>
@@ -59,6 +80,32 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     position: "relative",
   },
+  //
+  locationDetailsContainer: {
+    borderWidth: 1,
+    borderColor: "red",
+    marginTop: 20,
+  },
+  propertyName: {
+    fontSize: 18,
+    fontWeight: "700",
+  },
+  locationAddressContainer: {
+    flexDirection: "row",
+    // justifyContent: "space-between",
+    alignItems: "center",
+    marginTop: 5,
+  },
+  locationAddressText: {
+    fontWeight: "500",
+    width: 220,
+    // borderWidth: 1,
+    // borderColor: "red",
+  },
+  locationAddressIcon: {
+    marginLeft: 5,
+  },
+  //
   detailsContainer: {
     borderWidth: 1,
     borderColor: "red",
