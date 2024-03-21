@@ -18,6 +18,8 @@ import {
   MaterialCommunityIcons,
   MaterialIcons,
   Ionicons,
+  Entypo,
+  AntDesign,
 } from "@expo/vector-icons";
 // Get the screen width
 const { width: screenWidth } = Dimensions.get("window");
@@ -32,6 +34,10 @@ const RoomDetails = ({ navigation }) => {
         <Ionicons name={iconName} size={24} color={color} />
       ) : iconType === "matcom" ? (
         <MaterialCommunityIcons name={iconName} size={24} color={color} />
+      ) : iconType === "entypo" ? (
+        <Entypo name={iconName} size={24} color="black" />
+      ) : iconType === "antd" ? (
+        <AntDesign name={iconName} size={24} color="black" />
       ) : (
         <MaterialIcons name={iconName} size={24} color={color} />
       )}
@@ -121,21 +127,25 @@ const RoomDetails = ({ navigation }) => {
                   color="black"
                   iconType={"matcom"}
                 />
-                <IconWithLabel iconName="bathtub" label="1" color="black" />
+                <IconWithLabel
+                  iconName="bathtub"
+                  label="2 bathrooms"
+                  color="black"
+                />
               </View>
               {/* third row */}
               <View style={styles.featureRow}>
                 <IconWithLabel
-                  iconName="business"
-                  label="High-Rise"
+                  iconName="area-graph"
+                  label="894 sqft"
                   color="black"
+                  iconType={"entypo"}
                 />
                 <IconWithLabel
-                  iconName="bed"
-                  label={"3"}
-                  size={24}
+                  iconName="car"
+                  label="1 carpark"
                   color="black"
-                  iconType="fontawesome"
+                  iconType={"antd"}
                 />
               </View>
             </View>
